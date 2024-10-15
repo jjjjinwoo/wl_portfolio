@@ -1,0 +1,77 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
+@import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css);
+@font-face {
+  font-family: "Neutral Face Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Neutral Face Regular"), url("../font/NeutralFace.woff") format("woff");
+}
+body {
+  font-family: "Pretendard", sans-serif;
+  word-break: keep-all;
+}
+
+.sec1 .container {
+  padding: 100px 0 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sec1 .container .text_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sec1 .container .text_box .title,
+.sec1 .container .text_box .sub {
+  text-align: center;
+}
+.sec1 .container .text_box .title {
+  font-size: 13.875rem;
+  font-family: "Neutral Face Regular";
+  font-weight: normal;
+}
+.sec1 .container .text_box .sub {
+  font-size: 1.25rem;
+  margin-top: 2.75rem;
+}
+.sec1 .container .img_box {
+  position: relative;
+  z-index: 1;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 5.375rem;
+}
+.sec1 .container .bg_box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+.sec1 .container .bg_box .text {
+  overflow: hidden;
+  height: 990px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sec1 .container .bg_box .text img {
+  position: relative;
+  top: 96px;
+  width: 2468px;
+}
+.sec1 .container .bg_box .line {
+  position: absolute;
+  top: 314px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sec1 .container .bg_box .line img {
+  position: absolute;
+}
+.sec1 .container .bg_box .line img:last-child {
+  top: -70px;
+  left: 76px;
+}/*# sourceMappingURL=index.css.map */
