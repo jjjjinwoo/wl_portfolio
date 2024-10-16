@@ -4,36 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/index.css" />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <!-- 스크롤 트리거 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <header></header>
     <main>
       <section class="sec1">
+        <div id="main-title">
+          <h2 class="title">NEOPHARM</h2>
+          <span class="sub"></span>
+        </div>
         <div class="container">
-          <div class="text_box">
-            <h2 class="title">NEOPHARM</h2>
-            <span class="sub">네오팜샵 쇼핑몰 구축</span>
-          </div>
-          <figure class="img_box">
+          <figure class="img-box">
             <img src="./img/sec1/mockup.png" alt="목업이미지" />
           </figure>
-          <figure class="bg_box">
+          <figure class="bg-box">
             <div class="text">
               <img
-                src="./img/sec1/weaver_portflio.svg"
+                src="./img/sec1/weaver-portflio.svg"
                 alt="위버로프트 포트폴리오 손글씨"
               />
             </div>
-
             <div class="line">
-              <img src="./img/sec1/line1.svg" alt="라인1" />
-              <img src="./img/sec1/line2.svg" alt="라인2" />
+              <div class="wrap first">
+                <div class="circle"></div>
+              </div>
+              <div class="wrap second">
+                <div class="circle"></div>
+              </div>
             </div>
           </figure>
+          <div class="black-box"></div>
+        </div>
+      </section>
+      <section class="sec2">
+        <div class="container">
+          <div class="text-box">
+            <p>
+              소아 경증환자의 응급실 과밀화를 방지하여 응급의 료자원의 효과적인
+              분배를 위해 선별 가이드라인을 안내합다. 소아 경증환자의 응급실
+              과밀화를 방지하 여 응급의료자원의 효과적인 분배를 위해 선별 가이
+              드라인을 안내합다.
+            </p>
+            <p>
+              소아 경증환자의 응급실 과밀화를 방지하여 응급의 료자원의 효과적인
+              분배를 위해 선별 가이드라인을 안내합다. 소아 경증환자의 응급실
+              과밀화를 방지하 여 응급의료자원의 효과적인 분배를 위해 선별 가이
+              드라인을 안내합다.
+            </p>
+          </div>
+          <a href="#" class="shortcut">사이트 바로가기</a>
+        </div>
+      </section>
+      <section class="sec3"></section>
+      <section class="sec4"></section>
+      <section class="sec5">
+        <div class="container">
+          <div class="visual-box">
+            <span>RED COLOR AFFILIATION</span>
+          </div>
         </div>
       </section>
     </main>
     <footer></footer>
+    <script src="./js/index.js"></script>
   </body>
 </html>

@@ -9,49 +9,124 @@
     url("../font/NeutralFace.woff") format("woff");
 }
 
+// 색상 변수
+
+$first-color: black;
+$second-color: white;
+
+// 공통
+
 body {
   font-family: "Pretendard", sans-serif;
-  word-break: keep-all;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+// 애니메이션
+
+@keyframes textFill {
+  0% {
+    background-position-y: 0.625rem;
+    letter-spacing: 2rem;
+  }
+  100% {
+    background-position-y: -11.25rem;
+    letter-spacing: 0rem;
+  }
+}
+@keyframes scaleDown {
+  0% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes circle1 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 50%;
+  }
+}
+@keyframes backgroundSizeDown {
+  0% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
 }
 
 // 섹션1 (메인섹션)
 
 .sec1 {
-  .container {
-    padding: 100px 0 370px;
+  background-color: $first-color;
+  #main-title {
+    position: sticky;
+    z-index: 100;
+    top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    .text_box {
+    mix-blend-mode: difference;
+    .title {
+      font-size: 13.875rem;
+      font-family: "Neutral Face Regular";
+      font-weight: normal;
+      -webkit-text-stroke: 1.5px rgb(255, 255, 255);
+      color: transparent;
+      background-image: -webkit-linear-gradient(
+        transparent 50%,
+        rgb(255, 255, 255) 50%
+      );
+      background-size: 106.25rem 25rem;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-position-y: 0.625rem;
+      animation-name: textFill;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      text-align: center;
+    }
+    .sub {
+      font-size: 1.25rem;
+      margin-top: 2.75rem;
+      text-align: center;
+      color: white;
+      font-weight: 200;
+    }
+  }
+  .container {
+    padding: 100px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .text-box {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      .title,
-      .sub {
-        text-align: center;
-      }
-      .title {
-        font-size: 13.875rem;
-        font-family: "Neutral Face Regular";
-        font-weight: normal;
-      }
-      .sub {
-        font-size: 1.25rem;
-        margin-top: 2.75rem;
-      }
     }
-    .img_box {
+    .img-box {
       position: relative;
       z-index: 1;
       width: fit-content;
       margin-top: 5.375rem;
+      animation-name: scaleDown;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
     }
-    .bg_box {
+    .bg-box {
       width: 100%;
-      height: 100%;
+      height: 2000px;
+      overflow: hidden;
       position: absolute;
       display: flex;
       justify-content: center;
+      top: 110px;
       .text {
         overflow: hidden;
         height: 990px;
@@ -62,22 +137,144 @@ body {
           position: relative;
           top: 96px;
           width: 2468px;
+          opacity: 10%;
+          mix-blend-mode: difference;
         }
       }
       .line {
         position: absolute;
-        top: 314px;
+        top: 510px;
         width: 100%;
         display: flex;
         justify-content: center;
-        img {
+        .wrap.first {
           position: absolute;
+          width: 1383px;
+          height: 1172px;
+          background: url(../img/sec1/line1.svg) no-repeat;
+          mix-blend-mode: difference;
+          .circle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 100%;
+            offset-path: path(
+              "M938.16,1c42.4,0,83.35,3.8,121.73,11.29,38.71,7.56,75.09,18.93,108.13,33.81,33.64,15.15,64.12,34.06,90.6,56.23,27.18,22.75,50.45,49.18,69.16,78.56,36.27,56.93,54.66,122.87,54.66,195.97,0,35.15-4.35,71.83-12.93,109.02-8.5,36.85-21.23,74.52-37.84,111.96-16.61,37.45-37.23,74.98-61.28,111.55-24.29,36.92-52.3,73.19-83.26,107.8-64.41,72.01-140.63,136.27-226.53,190.99-83.57,53.24-171.56,94.4-261.51,122.34-86.87,26.98-172.26,40.66-253.79,40.66-42.4,0-83.36-3.8-121.74-11.29-38.71-7.56-75.1-18.93-108.14-33.81-33.64-15.15-64.12-34.06-90.6-56.23-27.18-22.75-50.45-49.18-69.17-78.56C19.4,934.35,1,868.42,1,795.31c0-35.15,4.35-71.83,12.93-109.02,8.5-36.85,21.23-74.52,37.84-111.96,16.61-37.45,37.23-74.98,61.28-111.55,24.29-36.92,52.3-73.19,83.26-107.8,64.41-72.01,140.63-136.27,226.53-190.99,83.57-53.24,171.56-94.4,261.51-122.34C771.23,14.68,856.61,1,938.16,1h0M938.15,0c-160.86,0-344.75,54.16-515.84,163.15C70.55,387.24-93.98,758.24,54.82,991.82c76.42,119.97,220.62,180.35,390.49,180.35,160.86,0,344.75-54.16,515.84-163.15,351.75-224.08,516.28-595.09,367.48-828.67C1252.21,60.38,1108.01,0,938.15,0h0Z"
+            );
+            offset-distance: 0%;
+            animation-name: circle1;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+          }
         }
-        img:last-child {
-          top: -70px;
-          left: 76px;
+        .wrap.second {
+          position: absolute;
+          rotate: 180deg;
+          top: -64px;
+          width: 1246px;
+          height: 1316px;
+          background: url(../img/sec1/line2.svg) no-repeat;
+          mix-blend-mode: difference;
+          .circle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 100%;
+            offset-path: path(
+              "M863.91,1c49.25,0,95.65,7.28,137.9,21.63,43.55,14.79,82.68,37.11,116.3,66.33,50.95,44.28,87.32,102.27,108.1,172.36,9.99,33.7,16.25,70.11,18.59,108.2,2.32,37.75.82,77.48-4.46,118.09-5.28,40.62-14.38,82.47-27.05,124.36-12.8,42.31-29.35,85.04-49.19,127.01-41.29,87.34-96.1,170.61-162.91,247.49-44.93,51.7-94.06,98.95-146.03,140.42-50.38,40.2-103.33,74.92-157.38,103.19-106.75,55.83-215.6,85.34-314.77,85.34-49.26,0-95.67-7.28-137.93-21.63-43.56-14.79-82.69-37.11-116.33-66.33-50.95-44.28-87.32-102.27-108.1-172.36-9.99-33.7-16.25-70.11-18.59-108.2-2.32-37.75-.82-77.48,4.46-118.09,5.28-40.62,14.38-82.47,27.05-124.36,12.8-42.31,29.35-85.04,49.19-127.01,41.29-87.34,96.1-170.61,162.91-247.49,44.93-51.7,94.06-98.95,146.03-140.42,50.38-40.2,103.33-74.92,157.38-103.19C655.83,30.52,764.68,1.01,863.91,1h0M863.86,0c-198.9.02-435.42,118.11-618.94,329.29C-28.64,644.1-80.95,1046.57,128.1,1228.23c68.81,59.8,157.31,88.2,254.91,88.2,198.9,0,435.42-118.11,618.94-329.29,273.57-314.81,325.87-717.28,116.83-898.94C1049.96,28.41,961.46,0,863.86,0h0Z"
+            );
+            offset-distance: 0%;
+            animation-name: circle1;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+          }
         }
       }
+    }
+    .black-box {
+      background-color: $second-color;
+      width: 100%;
+      height: 15.5rem;
+      margin-top: 360px;
+    }
+  }
+}
+
+// 섹션2
+
+.sec2 {
+  background-color: $second-color;
+  padding-bottom: 100px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .text-box {
+      padding-top: 74px;
+      color: #858585;
+      display: flex;
+      justify-content: center;
+      column-gap: 66px;
+      p {
+        font-size: 18px;
+        font-weight: 300;
+        max-width: 356px;
+        line-height: 2;
+      }
+    }
+    .shortcut {
+      color: white;
+      margin: 0 auto;
+      font-size: 22px;
+      padding: 22px 60px;
+      border: 1px solid white;
+      margin-top: 80px;
+      mix-blend-mode: difference;
+    }
+  }
+}
+
+// 섹션3
+
+.sec3 {
+  background-color: $first-color;
+  height: 850px;
+}
+
+// 섹션4
+
+.sec4 {
+  height: 1300px;
+  background: url(../img/sec4/mockup.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation-name: backgroundSizeDown;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+// 섹션5
+
+.sec5 {
+  height: 1012px;
+  background-color: $first-color;
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 100px;
+    box-sizing: border-box;
+    .visual-box {
+      height: 0;
+      width: 50vw;
+      border-bottom: 702px solid $second-color;
+      border-right: 140px solid transparent;
+      overflow: hidden;
     }
   }
 }
