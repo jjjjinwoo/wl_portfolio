@@ -1,6 +1,6 @@
 "use strict";
 
-// 스크롤 트리거 불러오기(플러그인 안정화)
+// *스크롤 트리거 불러오기(플러그인 안정화)
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const firstColor = "black";
 const secondColor = "white";
 
-// 섹션1 타이핑
+// *섹션1 타이핑
 
 const content = "네오팜샵 쇼핑몰 구축";
 const text = document.querySelector("#main-title .sub");
@@ -24,7 +24,7 @@ function typing() {
 }
 setInterval(typing, 200);
 
-// 섹션1 메인 타이틀
+// *섹션1 메인 타이틀
 
 gsap.to("#main-title", {
   scrollTrigger: {
@@ -40,14 +40,14 @@ gsap.to("#main-title .title", {
   scrollTrigger: {
     trigger: ".sec1",
     start: "0% 0%",
-    end: "80% 100%",
+    end: "140% 100%",
     scrub: 1,
   },
   scale: 0.4,
   transform: "translateY(80px)",
 });
 
-// 섹션2, 섹션3 배경 반전
+// *섹션2, 섹션3 배경 반전
 
 gsap.to(".sec1 .black-box", {
   scrollTrigger: {
@@ -55,7 +55,6 @@ gsap.to(".sec1 .black-box", {
     start: "100% 50%",
     end: "100% 50%",
     scrub: 1,
-    markers: false,
   },
   backgroundColor: firstColor,
 });
@@ -66,7 +65,6 @@ gsap.to(".sec2", {
     start: "100% 50%",
     end: "100% 50%",
     scrub: 1,
-    markers: false,
   },
   backgroundColor: firstColor,
 });
@@ -77,7 +75,19 @@ gsap.to(".sec3", {
     start: "100% 50%",
     end: "100% 50%",
     scrub: 1,
-    markers: false,
   },
   backgroundColor: secondColor,
+});
+
+// *섹션5
+
+gsap.to(".sec5 .visual-box", {
+  scrollTrigger: {
+    trigger: ".sec5",
+    start: "0% 50%",
+    end: "50% 50%",
+    scrub: 1,
+  },
+  clipPath: "polygon(0% 0%, 75% 0, 100% 100%, 100% 100%, 0% 100%)",
+  width: "calc(60% - 100px)",
 });

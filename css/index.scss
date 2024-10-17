@@ -18,10 +18,14 @@ $second-color: white;
 
 body {
   font-family: "Pretendard", sans-serif;
+  overflow-x: hidden;
 }
 a {
   color: black;
   text-decoration: none;
+}
+strong {
+  font-weight: 800;
 }
 
 // 애니메이션
@@ -264,17 +268,39 @@ a {
   height: 1012px;
   background-color: $first-color;
   .container {
+    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 100px;
     box-sizing: border-box;
     .visual-box {
-      height: 0;
-      width: 50vw;
-      border-bottom: 702px solid $second-color;
-      border-right: 140px solid transparent;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 100px;
+      position: absolute;
+      height: 702px;
+      width: calc(100% - 100px);
+      background-color: white;
+      clip-path: polygon(0% 0%, 100% 0, 100% 0, 100% 100%, 0% 100%);
+      .sub-title {
+        display: block;
+        font-size: 20px;
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+      .sub-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        margin-left: 50px;
+        margin-bottom: 50px;
+        div {
+          display: flex;
+          column-gap: 20px;
+        }
+      }
     }
   }
 }
