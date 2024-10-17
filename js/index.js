@@ -79,15 +79,55 @@ gsap.to(".sec3", {
   backgroundColor: secondColor,
 });
 
+gsap.to(".sec3 .reverse-box", {
+  scrollTrigger: {
+    trigger: ".sec3",
+    start: "100% 50%",
+    end: "100% 50%",
+    scrub: 1,
+  },
+  opacity: 1,
+});
+
+// *섹션4
+
+gsap.to(".sec4 .reverse-box", {
+  scrollTrigger: {
+    trigger: ".sec3",
+    start: "100% 50%",
+    end: "100% 50%",
+    scrub: 1,
+  },
+  opacity: 0,
+});
+
 // *섹션5
 
 gsap.to(".sec5 .visual-box", {
   scrollTrigger: {
     trigger: ".sec5",
     start: "0% 50%",
-    end: "50% 50%",
+    end: "10% 50%",
     scrub: 1,
   },
-  clipPath: "polygon(0% 0%, 75% 0, 100% 100%, 100% 100%, 0% 100%)",
-  width: "calc(60% - 100px)",
+  clipPath: "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)",
 });
+
+gsap.to(".sec5 .visual-box", {
+  scrollTrigger: {
+    trigger: ".sec5",
+    start: "10% 50%",
+    end: "50% 50%",
+    scrub: 1,
+    onEnter: sec5Enter,
+  },
+  width: "58%",
+});
+
+const sec5ColorIcon = document.querySelectorAll(".sec5 .main-box i");
+
+function sec5Enter() {
+  for (var i = 0; i < sec5ColorIcon.length; i++) {
+    sec5ColorIcon[i].style.display = "block";
+  }
+}

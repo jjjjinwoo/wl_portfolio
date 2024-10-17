@@ -24,8 +24,20 @@ a {
   color: black;
   text-decoration: none;
 }
+button {
+  border: none;
+  padding: 0;
+}
 strong {
   font-weight: 800;
+}
+.reverse-box {
+  top: 0;
+  background-color: $first-color;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
 }
 
 // 애니메이션
@@ -62,6 +74,16 @@ strong {
   }
   100% {
     background-size: 100%;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
@@ -245,13 +267,22 @@ strong {
 // 섹션3
 
 .sec3 {
+  position: relative;
   background-color: $first-color;
   height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.sec3 img {
+  position: relative;
+  z-index: 1;
 }
 
 // 섹션4
 
 .sec4 {
+  position: relative;
   height: 1300px;
   background: url(../img/sec4/mockup.jpg) no-repeat;
   background-size: cover;
@@ -260,6 +291,9 @@ strong {
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+.sec4 .reverse-box {
+  opacity: 1;
 }
 
 // 섹션5
@@ -280,11 +314,48 @@ strong {
       justify-content: space-between;
       margin-left: 100px;
       position: absolute;
+      z-index: 1;
       height: 702px;
       width: calc(100% - 100px);
-      background-color: white;
+      background-color: $second-color;
       clip-path: polygon(0% 0%, 100% 0, 100% 0, 100% 100%, 0% 100%);
+      .main-box {
+        padding-left: 50px;
+        box-sizing: border-box;
+        display: flex;
+        position: absolute;
+        i {
+          display: none;
+          position: relative;
+          width: 334px;
+          height: 334px;
+          background-color: black;
+          border-radius: 100%;
+          top: 154px;
+          opacity: 0;
+          margin-right: 46px;
+          animation-name: fadeInRight;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        i:nth-child(1) {
+          background-color: #e00719;
+        }
+        i:nth-child(2) {
+          background-color: #fdb9e1;
+          animation-delay: 0.1s;
+        }
+        i:nth-child(3) {
+          background-color: grey;
+          animation-delay: 0.2s;
+        }
+        i:nth-child(4) {
+          background-color: grey;
+          animation-delay: 0.3s;
+        }
+      }
       .sub-title {
+        color: $first-color;
         display: block;
         font-size: 20px;
         margin-top: 50px;
@@ -299,8 +370,86 @@ strong {
         div {
           display: flex;
           column-gap: 20px;
+          span {
+            display: flex;
+            color: $first-color;
+            font-weight: 400;
+          }
+          span::before {
+            content: "icon";
+            font-size: 0;
+            display: flex;
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background-color: white;
+            margin-right: 6px;
+            margin-top: 1px;
+          }
+          span.first::before {
+            background-color: #e00719;
+          }
+          span.second::before {
+            background-color: #fdb9e1;
+          }
+          span.third::before {
+            background-color: #808080;
+          }
+          span.fourth::before {
+            background-color: #808080;
+          }
+        }
+      }
+    }
+    .text-box {
+      position: absolute;
+      right: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+      .category {
+        font-size: 18px;
+        padding: 6px 20px;
+        background-color: $second-color;
+        color: $first-color;
+        font-weight: 800;
+        border-radius: 30px;
+      }
+      h3 {
+        font-family: "Neutral Face Regular";
+        font-weight: normal;
+        font-size: 40px;
+        color: white;
+        mix-blend-mode: difference;
+      }
+      p {
+        font-size: 18px;
+        text-align: center;
+        color: #858585;
+        font-weight: 100;
+        line-height: 2;
+      }
+      .button-box {
+        display: flex;
+        column-gap: 20px;
+        mix-blend-mode: difference;
+        button {
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          background-color: white;
+          opacity: 10%;
+        }
+        button.on {
+          opacity: 1;
         }
       }
     }
   }
+}
+
+.sec6 {
+  background-color: #0a0a0a;
+  height: 2000px;
 }
