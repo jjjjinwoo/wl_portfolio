@@ -107,7 +107,7 @@ gsap.to(".sec5 .visual-box", {
   scrollTrigger: {
     trigger: ".sec5",
     start: "0% 50%",
-    end: "10% 50%",
+    end: "0% 50%",
     scrub: 1,
   },
   clipPath: "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)",
@@ -116,12 +116,12 @@ gsap.to(".sec5 .visual-box", {
 gsap.to(".sec5 .visual-box", {
   scrollTrigger: {
     trigger: ".sec5",
-    start: "10% 50%",
+    start: "0% 50%",
     end: "50% 50%",
     scrub: 1,
-    onEnter: sec5Enter,
+    onLeave: sec5Enter,
   },
-  width: "58%",
+  // width: "58%",
 });
 
 const sec5ColorIcon = document.querySelectorAll(".sec5 .main-box i");

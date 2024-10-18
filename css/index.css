@@ -296,10 +296,10 @@ strong {
   position: absolute;
   z-index: 1;
   height: 702px;
-  width: calc(100% - 100px);
+  width: 58%;
   background-color: white;
-  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 0, 100% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0, 100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 0% 0px, 0% 100%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 0% 0px, 0% 100%, 100% 100%, 0% 100%);
 }
 .sec5 .container .visual-box .main-box {
   padding-left: 50px;
