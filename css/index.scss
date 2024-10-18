@@ -9,7 +9,7 @@
     url("../font/NeutralFace.woff") format("woff");
 }
 
-// 색상 변수
+// 색상 변수  <- 블랙, 화이트 바꿀 때 이거 수정!!
 
 $first-color: black;
 $second-color: white;
@@ -84,6 +84,14 @@ strong {
   100% {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+@keyframes gapDown {
+  0% {
+    column-gap: 80px;
+  }
+  100% {
+    column-gap: 40px;
   }
 }
 
@@ -284,7 +292,7 @@ strong {
 .sec4 {
   position: relative;
   height: 1300px;
-  background: url(../img/sec4/mockup.jpg) no-repeat;
+  background: black url(../img/sec4/mockup.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   animation-name: backgroundSizeDown;
@@ -319,91 +327,113 @@ strong {
       width: 58%;
       background-color: $second-color;
       clip-path: polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%);
-      .main-box {
-        padding-left: 50px;
-        box-sizing: border-box;
-        display: flex;
+      .slider.main {
+        width: 1500px;
         position: absolute;
-        i {
-          display: none;
-          position: relative;
-          width: 334px;
-          height: 334px;
-          background-color: black;
-          border-radius: 100%;
-          top: 154px;
-          opacity: 0;
-          margin-right: 46px;
-          animation-name: fadeInRight;
-          animation-duration: 0.5s;
-          animation-fill-mode: forwards;
-        }
-        i:nth-child(1) {
-          background-color: #e00719;
-        }
-        i:nth-child(2) {
-          background-color: #fdb9e1;
-          animation-delay: 0.1s;
-        }
-        i:nth-child(3) {
-          background-color: grey;
-          animation-delay: 0.2s;
-        }
-        i:nth-child(4) {
-          background-color: grey;
-          animation-delay: 0.3s;
-        }
-      }
-      .sub-title {
-        color: $first-color;
-        display: block;
-        font-size: 20px;
-        margin-top: 50px;
-        margin-left: 50px;
-      }
-      .sub-box {
-        display: flex;
-        flex-direction: column;
-        row-gap: 8px;
-        margin-left: 50px;
-        margin-bottom: 50px;
-        div {
+        top: 140px;
+        .main-box {
+          width: fit-content;
+          padding-left: 50px;
+          box-sizing: border-box;
           display: flex;
-          column-gap: 20px;
-          span {
-            display: flex;
-            color: $first-color;
-            font-weight: 400;
-          }
-          span::before {
-            content: "icon";
-            font-size: 0;
-            display: flex;
-            width: 12px;
-            height: 12px;
+          column-gap: 100px;
+          i {
+            display: block;
+            position: relative;
+            top: 24px;
+            width: 334px;
+            height: 334px;
+            background-color: black;
             border-radius: 100%;
-            background-color: white;
-            margin-right: 6px;
-            margin-top: 1px;
+            opacity: 0;
+            // opacity: 1;
+            animation-name: fadeInRight;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
           }
-          span.first::before {
+          i:nth-child(1) {
             background-color: #e00719;
           }
-          span.second::before {
+          i:nth-child(2) {
             background-color: #fdb9e1;
+            animation-delay: 0.1s;
           }
-          span.third::before {
-            background-color: #808080;
+          i:nth-child(3) {
+            background-color: grey;
+            animation-delay: 0.2s;
           }
-          span.fourth::before {
-            background-color: #808080;
+          span {
+            position: relative;
+            top: -25px;
+            opacity: 0;
+            font-size: 448px;
+            font-weight: 500;
+            animation-name: fadeInRight;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+          }
+          span:nth-child(2) {
+            animation-delay: 0.1s;
+          }
+          span:nth-child(3) {
+            animation-delay: 0.2s;
           }
         }
       }
     }
+    .sub-title {
+      color: $first-color;
+      display: block;
+      font-size: 20px;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    .sub-box {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      margin-left: 50px;
+      margin-bottom: 50px;
+      div {
+        display: flex;
+        column-gap: 20px;
+        span {
+          display: flex;
+          color: $first-color;
+          font-weight: 400;
+        }
+        span::before {
+          content: "icon";
+          font-size: 0;
+          display: flex;
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          background-color: white;
+          margin-right: 6px;
+          margin-top: 1px;
+        }
+        span.first::before {
+          background-color: #e00719;
+        }
+        span.second::before {
+          background-color: #fdb9e1;
+        }
+        span.third::before {
+          background-color: #808080;
+        }
+        span.fourth::before {
+          background-color: #808080;
+        }
+      }
+    }
+  }
+  .slider.sub1 {
+    position: absolute;
+    right: 10%;
+    width: 500px;
+    margin-bottom: 50px;
     .text-box {
-      position: absolute;
-      right: 10%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -429,21 +459,6 @@ strong {
         color: #858585;
         font-weight: 100;
         line-height: 2;
-      }
-      .button-box {
-        display: flex;
-        column-gap: 20px;
-        mix-blend-mode: difference;
-        button {
-          width: 12px;
-          height: 12px;
-          border-radius: 100%;
-          background-color: white;
-          opacity: 10%;
-        }
-        button.on {
-          opacity: 1;
-        }
       }
     }
   }

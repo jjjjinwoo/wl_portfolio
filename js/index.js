@@ -4,12 +4,12 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// 색상 변수
+// 색상 변수 <- 블랙, 화이트 바꿀 때 이거 수정!!
 
 const firstColor = "black";
 const secondColor = "white";
 
-// *섹션1 타이핑
+// *섹션1: 타이핑 애니메이션
 
 const content = "네오팜샵 쇼핑몰 구축";
 const text = document.querySelector("#main-title .sub");
@@ -24,7 +24,7 @@ function typing() {
 }
 setInterval(typing, 200);
 
-// *섹션1 메인 타이틀
+// *섹션1: 스크롤에 따라 움직이는 메인 타이틀
 
 gsap.to("#main-title", {
   scrollTrigger: {
@@ -47,7 +47,7 @@ gsap.to("#main-title .title", {
   transform: "translateY(80px)",
 });
 
-// *섹션2, 섹션3 배경 반전
+// *섹션2, 섹션3: 배경 반전
 
 gsap.to(".sec1 .black-box", {
   scrollTrigger: {
@@ -89,7 +89,7 @@ gsap.to(".sec3 .reverse-box", {
   opacity: 1,
 });
 
-// *섹션4
+// *섹션4: 배경 반전
 
 gsap.to(".sec4 .reverse-box", {
   scrollTrigger: {
@@ -101,7 +101,7 @@ gsap.to(".sec4 .reverse-box", {
   opacity: 0,
 });
 
-// *섹션5
+// *섹션5: 영역 펼쳐지는 이벤트
 
 gsap.to(".sec5 .visual-box", {
   scrollTrigger: {
@@ -113,21 +113,53 @@ gsap.to(".sec5 .visual-box", {
   clipPath: "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)",
 });
 
-gsap.to(".sec5 .visual-box", {
+gsap.to(".sec5 .main-box", {
   scrollTrigger: {
     trigger: ".sec5",
     start: "0% 50%",
-    end: "50% 50%",
+    end: "100% 50%",
     scrub: 1,
-    onLeave: sec5Enter,
+    // markers: true,
   },
-  // width: "58%",
+  "column-gap": "20px",
 });
 
-const sec5ColorIcon = document.querySelectorAll(".sec5 .main-box i");
+// *섹션5: 슬라이더
 
-function sec5Enter() {
-  for (var i = 0; i < sec5ColorIcon.length; i++) {
-    sec5ColorIcon[i].style.display = "block";
-  }
-}
+$(document).ready(function () {
+  $(".sec5 .slider.main").slick({
+    draggable: false,
+    arrows: false,
+    fade: true,
+    speed: 0,
+    asNavFor: ".sec5 .slider.sub1",
+  });
+
+  const sec5ColorIcon = document.querySelectorAll(".sec5 .main-box i");
+  const sec5TextIcon = document.querySelectorAll(".sec5 .main-box span");
+
+  $(".sec5 .slider.main").on("beforeChange", function () {
+    for (var i = 0; i < sec5ColorIcon.length; i++) {
+      sec5ColorIcon[i].style.display = "none";
+    }
+    for (var i = 0; i < sec5TextIcon.length; i++) {
+      sec5TextIcon[i].style.display = "none";
+    }
+  });
+  $(".sec5 .slider.main").on("afterChange", function () {
+    for (var i = 0; i < sec5ColorIcon.length; i++) {
+      sec5ColorIcon[i].style.display = "block";
+    }
+    for (var i = 0; i < sec5TextIcon.length; i++) {
+      sec5TextIcon[i].style.display = "block";
+    }
+  });
+
+  $(".sec5 .slider.sub1").slick({
+    // draggable: false,
+    fade: true,
+    arrows: false,
+    dots: true,
+    asNavFor: ".sec5 .slider.main",
+  });
+});

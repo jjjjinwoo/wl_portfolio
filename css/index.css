@@ -78,6 +78,16 @@ strong {
     transform: translateX(0px);
   }
 }
+@keyframes gapDown {
+  0% {
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+  100% {
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
+}
 .sec1 {
   background-color: black;
 }
@@ -263,7 +273,7 @@ strong {
 .sec4 {
   position: relative;
   height: 1300px;
-  background: url(../img/sec4/mockup.jpg) no-repeat;
+  background: black url(../img/sec4/mockup.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   animation-name: backgroundSizeDown;
@@ -301,66 +311,85 @@ strong {
   -webkit-clip-path: polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%);
           clip-path: polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%);
 }
-.sec5 .container .visual-box .main-box {
+.sec5 .container .visual-box .slider.main {
+  width: 1500px;
+  position: absolute;
+  top: 140px;
+}
+.sec5 .container .visual-box .slider.main .main-box {
+  width: -moz-fit-content;
+  width: fit-content;
   padding-left: 50px;
   box-sizing: border-box;
   display: flex;
-  position: absolute;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
 }
-.sec5 .container .visual-box .main-box i {
-  display: none;
+.sec5 .container .visual-box .slider.main .main-box i {
+  display: block;
   position: relative;
+  top: 24px;
   width: 334px;
   height: 334px;
   background-color: black;
   border-radius: 100%;
-  top: 154px;
   opacity: 0;
-  margin-right: 46px;
   animation-name: fadeInRight;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-.sec5 .container .visual-box .main-box i:nth-child(1) {
+.sec5 .container .visual-box .slider.main .main-box i:nth-child(1) {
   background-color: #e00719;
 }
-.sec5 .container .visual-box .main-box i:nth-child(2) {
+.sec5 .container .visual-box .slider.main .main-box i:nth-child(2) {
   background-color: #fdb9e1;
   animation-delay: 0.1s;
 }
-.sec5 .container .visual-box .main-box i:nth-child(3) {
+.sec5 .container .visual-box .slider.main .main-box i:nth-child(3) {
   background-color: grey;
   animation-delay: 0.2s;
 }
-.sec5 .container .visual-box .main-box i:nth-child(4) {
-  background-color: grey;
-  animation-delay: 0.3s;
+.sec5 .container .visual-box .slider.main .main-box span {
+  position: relative;
+  top: -25px;
+  opacity: 0;
+  font-size: 448px;
+  font-weight: 500;
+  animation-name: fadeInRight;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
-.sec5 .container .visual-box .sub-title {
+.sec5 .container .visual-box .slider.main .main-box span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.sec5 .container .visual-box .slider.main .main-box span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.sec5 .container .sub-title {
   color: black;
   display: block;
   font-size: 20px;
   margin-top: 50px;
   margin-left: 50px;
 }
-.sec5 .container .visual-box .sub-box {
+.sec5 .container .sub-box {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
   margin-left: 50px;
   margin-bottom: 50px;
 }
-.sec5 .container .visual-box .sub-box div {
+.sec5 .container .sub-box div {
   display: flex;
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
-.sec5 .container .visual-box .sub-box div span {
+.sec5 .container .sub-box div span {
   display: flex;
   color: black;
   font-weight: 400;
 }
-.sec5 .container .visual-box .sub-box div span::before {
+.sec5 .container .sub-box div span::before {
   content: "icon";
   font-size: 0;
   display: flex;
@@ -371,27 +400,31 @@ strong {
   margin-right: 6px;
   margin-top: 1px;
 }
-.sec5 .container .visual-box .sub-box div span.first::before {
+.sec5 .container .sub-box div span.first::before {
   background-color: #e00719;
 }
-.sec5 .container .visual-box .sub-box div span.second::before {
+.sec5 .container .sub-box div span.second::before {
   background-color: #fdb9e1;
 }
-.sec5 .container .visual-box .sub-box div span.third::before {
+.sec5 .container .sub-box div span.third::before {
   background-color: #808080;
 }
-.sec5 .container .visual-box .sub-box div span.fourth::before {
+.sec5 .container .sub-box div span.fourth::before {
   background-color: #808080;
 }
-.sec5 .container .text-box {
+.sec5 .slider.sub1 {
   position: absolute;
   right: 10%;
+  width: 500px;
+  margin-bottom: 50px;
+}
+.sec5 .slider.sub1 .text-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 20px;
 }
-.sec5 .container .text-box .category {
+.sec5 .slider.sub1 .text-box .category {
   font-size: 18px;
   padding: 6px 20px;
   background-color: white;
@@ -399,35 +432,19 @@ strong {
   font-weight: 800;
   border-radius: 30px;
 }
-.sec5 .container .text-box h3 {
+.sec5 .slider.sub1 .text-box h3 {
   font-family: "Neutral Face Regular";
   font-weight: normal;
   font-size: 40px;
   color: white;
   mix-blend-mode: difference;
 }
-.sec5 .container .text-box p {
+.sec5 .slider.sub1 .text-box p {
   font-size: 18px;
   text-align: center;
   color: #858585;
   font-weight: 100;
   line-height: 2;
-}
-.sec5 .container .text-box .button-box {
-  display: flex;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  mix-blend-mode: difference;
-}
-.sec5 .container .text-box .button-box button {
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  background-color: white;
-  opacity: 10%;
-}
-.sec5 .container .text-box .button-box button.on {
-  opacity: 1;
 }
 
 .sec6 {
