@@ -14,10 +14,14 @@
 $first-color: black;
 $second-color: white;
 
+// 글꼴 변수
+
+$main-font: "Pretendard Variable", sans-serif;
+
 // 공통
 
 body {
-  font-family: "Pretendard", sans-serif;
+  font-family: "Pretendard Variable", sans-serif;
   overflow-x: hidden;
 }
 a {
@@ -29,7 +33,7 @@ button {
   padding: 0;
 }
 strong {
-  font-weight: 800;
+  font-weight: 700;
 }
 .reverse-box {
   top: 0;
@@ -38,6 +42,14 @@ strong {
   height: 100%;
   position: absolute;
   opacity: 0;
+}
+.category {
+  font-size: 18px;
+  padding: 6px 20px;
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  border-radius: 30px;
 }
 
 // 애니메이션
@@ -68,14 +80,6 @@ strong {
     offset-distance: 50%;
   }
 }
-@keyframes backgroundSizeDown {
-  0% {
-    background-size: 110%;
-  }
-  100% {
-    background-size: 100%;
-  }
-}
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -92,6 +96,26 @@ strong {
   }
   100% {
     column-gap: 40px;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -268,6 +292,11 @@ strong {
       border: 1px solid white;
       margin-top: 80px;
       mix-blend-mode: difference;
+      background-color: rgba(255, 255, 255, 0);
+      transition: background-color 0.3s ease-out;
+    }
+    .shortcut:hover {
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 }
@@ -281,27 +310,40 @@ strong {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-}
-.sec3 img {
-  position: relative;
-  z-index: 1;
+  canvas {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 // 섹션4
 
 .sec4 {
+  width: 100%;
   position: relative;
-  height: 1300px;
-  background: black url(../img/sec4/mockup.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  animation-name: backgroundSizeDown;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.sec4 .reverse-box {
-  opacity: 1;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  .img-box {
+    width: 100%;
+    height: 100%;
+    div {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position-y: center;
+    }
+    div.first {
+      background-image: url(../img/sec4/mockup1.jpg);
+    }
+    div.second {
+      background-image: url(../img/sec4/mockup2.jpg);
+    }
+  }
+  .reverse-box {
+    opacity: 1;
+    pointer-events: none;
+  }
 }
 
 // 섹션5
@@ -317,9 +359,6 @@ strong {
     height: 100%;
     box-sizing: border-box;
     .visual-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       margin-left: 100px;
       position: absolute;
       z-index: 1;
@@ -329,101 +368,109 @@ strong {
       clip-path: polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%);
       .slider.main {
         width: 1500px;
-        position: absolute;
-        top: 140px;
-        .main-box {
-          width: fit-content;
-          padding-left: 50px;
-          box-sizing: border-box;
+        height: 100%;
+        .slider-content {
+          height: 702px;
           display: flex;
-          column-gap: 100px;
-          i {
+          flex-direction: column;
+          justify-content: space-between;
+          .main-box {
+            width: fit-content;
+            padding-left: 50px;
+            box-sizing: border-box;
+            display: flex;
+            column-gap: 120px;
+            position: absolute;
+            top: 140px;
+            i {
+              display: block;
+              position: relative;
+              top: 24px;
+              width: 334px;
+              height: 334px;
+              background-color: black;
+              border-radius: 100%;
+              opacity: 0;
+              // opacity: 1;
+              animation-name: fadeInRight;
+              animation-duration: 0.5s;
+              animation-fill-mode: forwards;
+            }
+            i:nth-child(1) {
+              background-color: #e00719;
+            }
+            i:nth-child(2) {
+              background-color: #fdb9e1;
+              animation-delay: 0.1s;
+            }
+            i:nth-child(3) {
+              background-color: grey;
+              animation-delay: 0.2s;
+            }
+            span {
+              position: relative;
+              top: -25px;
+              opacity: 0;
+              font-family: $main-font;
+              font-size: 448px;
+              font-weight: 500;
+              animation-name: fadeInRight;
+              animation-duration: 0.5s;
+              animation-fill-mode: forwards;
+            }
+            span:nth-child(2) {
+              animation-delay: 0.1s;
+            }
+            span:nth-child(3) {
+              animation-delay: 0.2s;
+            }
+          }
+          .sub-title {
+            color: $first-color;
             display: block;
-            position: relative;
-            top: 24px;
-            width: 334px;
-            height: 334px;
-            background-color: black;
-            border-radius: 100%;
-            opacity: 0;
-            // opacity: 1;
-            animation-name: fadeInRight;
-            animation-duration: 0.5s;
-            animation-fill-mode: forwards;
+            font-size: 20px;
+            margin-top: 50px;
+            margin-left: 50px;
           }
-          i:nth-child(1) {
-            background-color: #e00719;
+          .sub-box {
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+            margin-left: 50px;
+            margin-bottom: 50px;
+            div {
+              display: flex;
+              column-gap: 20px;
+              span {
+                display: flex;
+                color: $first-color;
+                font-weight: 400;
+              }
+              span::before {
+                content: "icon";
+                font-size: 0;
+                display: flex;
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+                background-color: white;
+                margin-right: 6px;
+                margin-top: 1px;
+              }
+              span.first::before {
+                background-color: #e00719;
+              }
+              span.second::before {
+                background-color: #fdb9e1;
+              }
+              span.third::before {
+                background-color: #808080;
+              }
+              span.fourth::before {
+                background-color: #808080;
+              }
+            }
           }
-          i:nth-child(2) {
-            background-color: #fdb9e1;
-            animation-delay: 0.1s;
-          }
-          i:nth-child(3) {
-            background-color: grey;
-            animation-delay: 0.2s;
-          }
-          span {
-            position: relative;
-            top: -25px;
-            opacity: 0;
-            font-size: 448px;
-            font-weight: 500;
-            animation-name: fadeInRight;
-            animation-duration: 0.5s;
-            animation-fill-mode: forwards;
-          }
-          span:nth-child(2) {
-            animation-delay: 0.1s;
-          }
-          span:nth-child(3) {
-            animation-delay: 0.2s;
-          }
-        }
-      }
-    }
-    .sub-title {
-      color: $first-color;
-      display: block;
-      font-size: 20px;
-      margin-top: 50px;
-      margin-left: 50px;
-    }
-    .sub-box {
-      display: flex;
-      flex-direction: column;
-      row-gap: 8px;
-      margin-left: 50px;
-      margin-bottom: 50px;
-      div {
-        display: flex;
-        column-gap: 20px;
-        span {
-          display: flex;
-          color: $first-color;
-          font-weight: 400;
-        }
-        span::before {
-          content: "icon";
-          font-size: 0;
-          display: flex;
-          width: 12px;
-          height: 12px;
-          border-radius: 100%;
-          background-color: white;
-          margin-right: 6px;
-          margin-top: 1px;
-        }
-        span.first::before {
-          background-color: #e00719;
-        }
-        span.second::before {
-          background-color: #fdb9e1;
-        }
-        span.third::before {
-          background-color: #808080;
-        }
-        span.fourth::before {
-          background-color: #808080;
         }
       }
     }
@@ -457,7 +504,7 @@ strong {
         font-size: 18px;
         text-align: center;
         color: #858585;
-        font-weight: 100;
+        font-weight: 300;
         line-height: 2;
       }
     }
@@ -465,6 +512,438 @@ strong {
 }
 
 .sec6 {
+  position: relative;
   background-color: #0a0a0a;
-  height: 2000px;
+  .device-container {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(100% - 17vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    figure {
+      position: sticky;
+      top: 0;
+      .fake-img {
+        position: relative;
+        width: 401px;
+        height: 779px;
+        background-image: url(../img/sec6/device.png);
+      }
+      .fake-img::before {
+        content: "MAIN PAGE";
+        font-size: 28px;
+        text-align: center;
+        color: white;
+        position: absolute;
+        top: -58px;
+        left: 128px;
+      }
+      .fake-img::after {
+        content: "circle";
+        font-size: 0;
+        display: block;
+        position: absolute;
+        top: -80px;
+        left: 106px;
+        width: 66px;
+        height: 66px;
+        border: 1px solid white;
+        border-radius: 100%;
+        opacity: 0.1;
+      }
+    }
+    figure::before {
+      content: "curtain";
+      display: block;
+      width: 401px;
+      height: calc(18vh - 8px);
+      background-color: #0a0a0a;
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+    padding: 18vh 0;
+  }
+  .mobile-box {
+    position: relative;
+    width: 374px;
+    background-color: white;
+    border-radius: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .detail {
+      position: absolute;
+      color: white;
+      opacity: 0;
+      transform: translateY(20px);
+      span {
+        font-size: 18px;
+        padding: 6px 20px;
+        background-color: white;
+        color: black;
+        font-weight: 800;
+        border-radius: 30px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 2;
+        font-weight: 200;
+        opacity: 0.5;
+        margin-top: 26px;
+      }
+    }
+  }
+  .mobile-box::before {
+    font-size: 28px;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -58px;
+    color: white;
+  }
+  .mobile-box.first::before {
+    content: "SUB PAGE 1";
+    font-size: 28px;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -58px;
+    color: white;
+  }
+  .mobile-box.third::before {
+    content: "SUB PAGE 2";
+    font-size: 28px;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -58px;
+    color: white;
+  }
+  .mobile-box::after {
+    content: "circle";
+    font-size: 0;
+    display: block;
+    position: absolute;
+    top: -80px;
+    left: 88px;
+    width: 66px;
+    height: 66px;
+    border: 1px solid white;
+    border-radius: 100%;
+    opacity: 0.1;
+  }
+  .mobile-box.first {
+    position: relative;
+    top: 30vh;
+    height: 1100px;
+    background-image: url(../img/sec6/sub-page-1.png);
+    .detail {
+      top: calc(1100px + 60vh);
+    }
+  }
+  .mobile-box.second {
+    height: 236vh;
+    background-image: url(../img/sec6/main-page.png);
+  }
+  .mobile-box.third {
+    position: relative;
+    top: 140vh;
+    height: 746px;
+    background-image: url(../img/sec6/sub-page-2.png);
+    .detail {
+      top: calc(-746px - 20vh);
+    }
+  }
+  .bg-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.03;
+    mix-blend-mode: screen;
+    img {
+      width: 1578px;
+    }
+  }
+}
+
+.sec7 {
+  position: relative;
+  background-color: #0a0a0a;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    .items {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      list-style: none;
+      margin: 0 160px;
+      .item {
+        min-width: 1415px;
+        height: 100vh;
+        background-color: transparent;
+        margin-right: 80px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+          position: relative;
+          width: 1415px;
+          height: 795px;
+          border-radius: 42px;
+          background-color: white;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        div::before {
+          content: "img";
+          font-size: 0;
+          position: absolute;
+          width: 1417px;
+          left: -1px;
+          top: -1px;
+          height: 797px;
+          background-image: url(../img/sec7/device.png);
+          background-size: cover;
+        }
+      }
+      .item:nth-child(1) {
+        div {
+          background-image: url(../img/sec7/page-1.png);
+        }
+      }
+      .item:nth-child(2) {
+        div {
+          background-image: url(../img/sec7/page-3.png);
+        }
+      }
+      .item:nth-child(3) {
+        div {
+          background-image: url(../img/sec7/page-2.png);
+        }
+      }
+      .item:nth-child(4) {
+        div {
+          background-image: url(../img/sec7/page-4.png);
+        }
+      }
+    }
+  }
+  .bg-box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(10, 10, 10, 1) 0%,
+      rgba(10, 10, 10, 0) 5%,
+      rgba(10, 10, 10, 0) 95%,
+      rgba(10, 10, 10, 1) 100%
+    );
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+  }
+}
+
+.sec8 {
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  .container {
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    column-gap: 36px;
+    .solution {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      opacity: 0;
+      .category {
+        margin-bottom: 24px;
+      }
+      .be-box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 418px;
+        height: 250px;
+        margin: 64px 0;
+        p {
+          font-size: 22px;
+          color: white;
+          text-align: center;
+          font-weight: 300;
+          line-height: 34px;
+        }
+      }
+      .be-box::before {
+        content: "bg";
+        font-size: 0;
+        height: 282px;
+        width: 418px;
+        display: block;
+        position: absolute;
+        background-image: url(../img/sec8/be-box.svg);
+      }
+      .af-box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 418px;
+        height: 250px;
+        margin: 64px 0;
+        margin-bottom: 0;
+        p {
+          color: black;
+          position: relative;
+          font-size: 30px;
+          text-align: center;
+          font-weight: 700;
+        }
+      }
+      .af-box::before {
+        content: "bg";
+        font-size: 0;
+        height: 282px;
+        width: 418px;
+        display: block;
+        position: absolute;
+        background-image: url(../img/sec8/af-box.svg);
+      }
+    }
+    .solution.first {
+      animation-name: fadeInUp;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+    .solution.second {
+      animation-name: fadeInDown;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.2s;
+      margin-bottom: 100px;
+      .category {
+        background-color: #cccccc;
+      }
+      .be-box::before {
+        background-image: url(../img/sec8/be-box-m.svg);
+      }
+      .af-box::before {
+        background-image: url(../img/sec8/af-box-m.svg);
+      }
+    }
+    .solution.third {
+      animation-name: fadeInUp;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+.sec9 {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  background-image: url(../img/sec9/mockup.png);
+  background-size: cover;
+  .container {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 36px;
+    h3 {
+      font-weight: 600;
+      font-size: 38px;
+      color: white;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 200;
+      color: white;
+    }
+  }
+  .black-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+  }
+}
+
+footer {
+  .up {
+    height: 146px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    box-sizing: border-box;
+    a:not(a.middle) {
+      display: flex;
+      font-size: 20px;
+      strong {
+        margin-right: 10px;
+      }
+    }
+    a.left::before {
+      content: "arrow";
+      font-size: 0;
+      display: block;
+      width: 40px;
+      height: 20px;
+      background-image: url(../img/footer/arrow-l.svg);
+      margin-right: 30px;
+    }
+    a.right::after {
+      content: "arrow";
+      font-size: 0;
+      display: block;
+      width: 40px;
+      height: 20px;
+      background-image: url(../img/footer/arrow-r.svg);
+      margin-left: 30px;
+    }
+    a.middle {
+      display: block;
+      width: 90px;
+      height: 90px;
+      background-image: url(../img/footer/menu-btn.png);
+    }
+  }
+  .down {
+    height: 360px;
+    background-image: url(../img/footer/임시.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #111111;
+  }
 }

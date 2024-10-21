@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1578.96 1175">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_무제_그라디언트_8);
+      }
+    </style>
+    <linearGradient id="_무제_그라디언트_8" data-name="무제 그라디언트 8" x1="789.48" y1="0" x2="789.48" y2="1175" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#7f7f7f"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M620.62,1174.98h-232.73s0,0,0,0h0,0S0,0,0,0h232.73l273.12,828.26,160.42-471.48h232.33l-277.99,818.21ZM1578.96,0h-232.33l-283.9,828.07-115.22-356.97-118.39,345.91,115.12,356.64-.46,1.34h.89s0,0,0,0h231.84L1578.96,0Z"/>
+</svg>

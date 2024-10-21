@@ -1,5 +1,16 @@
 "use strict";
 
+// *lenis
+
+const lenis = new Lenis();
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // *스크롤 트리거 불러오기(플러그인 안정화)
 
 gsap.registerPlugin(ScrollTrigger);
@@ -54,7 +65,7 @@ gsap.to(".sec1 .black-box", {
     trigger: ".sec2",
     start: "100% 50%",
     end: "100% 50%",
-    scrub: 1,
+    scrub: 2,
   },
   backgroundColor: firstColor,
 });
@@ -64,7 +75,7 @@ gsap.to(".sec2", {
     trigger: ".sec2",
     start: "100% 50%",
     end: "100% 50%",
-    scrub: 1,
+    scrub: 2,
   },
   backgroundColor: firstColor,
 });
@@ -74,7 +85,8 @@ gsap.to(".sec3", {
     trigger: ".sec2",
     start: "100% 50%",
     end: "100% 50%",
-    scrub: 1,
+    scrub: 2,
+    onEnter: resizeCanvas,
   },
   backgroundColor: secondColor,
 });
@@ -84,7 +96,7 @@ gsap.to(".sec3 .reverse-box", {
     trigger: ".sec3",
     start: "100% 50%",
     end: "100% 50%",
-    scrub: 1,
+    scrub: 2,
   },
   opacity: 1,
 });
@@ -96,9 +108,20 @@ gsap.to(".sec4 .reverse-box", {
     trigger: ".sec3",
     start: "100% 50%",
     end: "100% 50%",
-    scrub: 1,
+    scrub: 2,
   },
   opacity: 0,
+});
+
+// *섹션4: 이미지 슬라이드
+
+$(document).ready(function () {
+  $(".sec4 .img-box").slick({
+    autoplay: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    autoplaySpeed: 3000,
+  });
 });
 
 // *섹션5: 영역 펼쳐지는 이벤트
@@ -121,16 +144,17 @@ gsap.to(".sec5 .main-box", {
     scrub: 1,
     // markers: true,
   },
-  "column-gap": "20px",
+  "column-gap": "10px",
 });
 
 // *섹션5: 슬라이더
 
 $(document).ready(function () {
   $(".sec5 .slider.main").slick({
-    draggable: false,
+    // draggable: false,
     arrows: false,
     fade: true,
+    pauseOnHover: false,
     speed: 0,
     asNavFor: ".sec5 .slider.sub1",
   });
@@ -157,9 +181,82 @@ $(document).ready(function () {
 
   $(".sec5 .slider.sub1").slick({
     // draggable: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: false,
     fade: true,
+    speed: 1000,
     arrows: false,
     dots: true,
     asNavFor: ".sec5 .slider.main",
   });
 });
+
+// *섹션6: 디테일 텍스트 페이드인 - 스크롤 트리거
+
+gsap.to(".sec6 .mobile-box.third .detail", {
+  scrollTrigger: {
+    trigger: ".sec6",
+    start: "20% 50%",
+    end: "20% 50%",
+    scrub: 2,
+  },
+  opacity: 1,
+  transform: "translateY(0px)",
+});
+
+gsap.to(".sec6 .mobile-box.first .detail", {
+  scrollTrigger: {
+    trigger: ".sec6",
+    start: "70% 50%",
+    end: "70% 50%",
+    scrub: 2,
+  },
+  opacity: 1,
+  transform: "translateY(0px)",
+});
+
+// *섹션7: 가로 스크롤
+
+let items = gsap.utils.toArray(".items"),
+  pageWrapper = document.querySelector(".sec7");
+
+items.forEach((container, i) => {
+  let localItems = container.querySelectorAll(".item"),
+    distance = () => {
+      let lastItemBounds =
+          localItems[localItems.length - 1].getBoundingClientRect(),
+        containerBounds = container.getBoundingClientRect();
+      return Math.max(0, lastItemBounds.right - containerBounds.right);
+    };
+  gsap.to(container, {
+    x: () => -distance(), // make sure it dynamically calculates things so that it adjusts to resizes
+    ease: "none",
+    scrollTrigger: {
+      trigger: container,
+      start: "bottom bottom",
+      pinnedContainer: pageWrapper,
+      end: () => "+=" + distance(),
+      pin: pageWrapper,
+      scrub: true,
+      invalidateOnRefresh: true, // will recalculate any function-based tween values on resize/refresh (making it responsive)
+    },
+  });
+});
+
+// *섹션8: 스크롤 트리거 콜백 함수
+
+gsap.to(".sec8", {
+  scrollTrigger: {
+    trigger: ".sec8",
+    start: "40% 50%",
+    end: "40% 50%",
+    onEnter: sec8FadeIn,
+  },
+});
+
+const sec4Con = document.querySelector(".sec8 .container");
+
+function sec8FadeIn() {
+  sec4Con.style.display = "flex";
+}
