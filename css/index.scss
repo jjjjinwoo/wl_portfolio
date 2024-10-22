@@ -332,6 +332,7 @@ strong {
       height: 100%;
       background-size: cover;
       background-position-y: center;
+      background-position-x: center;
     }
     div.first {
       background-image: url(../img/sec4/mockup1.jpg);
@@ -472,6 +473,17 @@ strong {
             }
           }
         }
+        .slider-content.text {
+          .sub-box {
+            span {
+              letter-spacing: 4px;
+              font-weight: 500;
+            }
+            span::before {
+              display: none;
+            }
+          }
+        }
       }
     }
   }
@@ -581,7 +593,7 @@ strong {
       position: absolute;
       color: white;
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(100px);
       span {
         font-size: 18px;
         padding: 6px 20px;
@@ -934,8 +946,9 @@ footer {
     }
     a.middle {
       display: block;
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
+      background-size: cover;
       background-image: url(../img/footer/menu-btn.png);
     }
   }

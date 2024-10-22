@@ -312,6 +312,7 @@ strong {
   height: 100%;
   background-size: cover;
   background-position-y: center;
+  background-position-x: center;
 }
 .sec4 .img-box div.first {
   background-image: url(../img/sec4/mockup1.jpg);
@@ -455,6 +456,13 @@ strong {
 .sec5 .container .visual-box .slider.main .slider-content .sub-box div span.fourth::before {
   background-color: #808080;
 }
+.sec5 .container .visual-box .slider.main .slider-content.text .sub-box span {
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+.sec5 .container .visual-box .slider.main .slider-content.text .sub-box span::before {
+  display: none;
+}
 .sec5 .slider.sub1 {
   position: absolute;
   right: 10%;
@@ -563,7 +571,7 @@ strong {
   position: absolute;
   color: white;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(100px);
 }
 .sec6 .mobile-box .detail span {
   font-size: 18px;
@@ -901,8 +909,9 @@ footer .up a.right::after {
 }
 footer .up a.middle {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
   background-image: url(../img/footer/menu-btn.png);
 }
 footer .down {

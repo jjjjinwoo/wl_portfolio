@@ -121,6 +121,7 @@ $(document).ready(function () {
     pauseOnFocus: false,
     pauseOnHover: false,
     autoplaySpeed: 3000,
+    fade: true,
   });
 });
 
@@ -155,6 +156,7 @@ $(document).ready(function () {
     arrows: false,
     fade: true,
     pauseOnHover: false,
+    pauseOnFocus: true,
     speed: 0,
     asNavFor: ".sec5 .slider.sub1",
   });
@@ -180,10 +182,11 @@ $(document).ready(function () {
   });
 
   $(".sec5 .slider.sub1").slick({
-    // draggable: false,
+    draggable: false,
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: false,
+    pauseOnFocus: true,
     fade: true,
     speed: 1000,
     arrows: false,

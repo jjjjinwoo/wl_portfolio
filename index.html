@@ -186,26 +186,16 @@
           World.add(world, [ground, wallLeft, wallRight, ceiling]);
         }
 
-        function createTextBody(
-          x,
-          y,
-          width,
-          height,
-          text,
-          fillStyle,
-          textColor
-        ) {
+        function createTextBody(x, y, width, height, fillStyle, strokeColor) {
           var body = Bodies.rectangle(x, y, width, height, {
             chamfer: {
               radius: Math.min(height / 2, 60), // height에 비례한 radius 값 설정
             },
             render: {
               fillStyle: fillStyle, // 배경 색상
-              strokeStyle: "black", // 외곽선
-              lineWidth: 2,
+              strokeStyle: strokeColor, // 외곽선 색상
+              lineWidth: 2, // 선 두께
             },
-            text: text,
-            textColor: textColor, // 텍스트 색상
             isStatic: false,
             restitution: 0.5,
             friction: 0.2,
@@ -214,6 +204,7 @@
           objects.push(body);
           return body;
         }
+
         function createObjects() {
           objects = []; // 객체 배열 초기화
           var black = "black";
@@ -221,22 +212,78 @@
           var red = "red";
 
           var bodyData = [
-            { text: "ILLUSTRATION", color: black, textColor: white },
-            { text: "ART", color: black, textColor: white },
-            { text: "3D", color: black, textColor: white },
-            { text: "GRAPHIC", color: black, textColor: white },
-            { text: "PHOTO", color: black, textColor: white },
-            { text: "GRAPHIC", color: black, textColor: white },
-            { text: "PHOTO", color: black, textColor: white },
-            { text: "DOCUMENTARY", color: white, textColor: black },
-            { text: "ANIMATION", color: white, textColor: black },
-            { text: "VINTAGE", color: white, textColor: black },
-            { text: "SHORT", color: white, textColor: black },
-            { text: "VINTAGE", color: white, textColor: black },
-            { text: "SHORT", color: white, textColor: black },
-            { text: "WEBSITE", color: red, textColor: white },
-            { text: "GOOD", color: red, textColor: white },
-            { text: "WORLD", color: red, textColor: white },
+            {
+              text: "ILLUSTRATION",
+              color: black,
+              strokeColor: white,
+              textColor: "white",
+            },
+            {
+              text: "ART",
+              color: black,
+              strokeColor: white,
+              textColor: "white",
+            },
+            {
+              text: "3D",
+              color: black,
+              strokeColor: white,
+              textColor: "white",
+            },
+            {
+              text: "GRAPHIC",
+              color: black,
+              strokeColor: white,
+              textColor: "white",
+            },
+            {
+              text: "PHOTO",
+              color: black,
+              strokeColor: white,
+              textColor: "white",
+            },
+            {
+              text: "DOCUMENTARY",
+              color: white,
+              strokeColor: black,
+              textColor: "black",
+            },
+            {
+              text: "ANIMATION",
+              color: white,
+              strokeColor: black,
+              textColor: "black",
+            },
+            {
+              text: "VINTAGE",
+              color: white,
+              strokeColor: black,
+              textColor: "black",
+            },
+            {
+              text: "SHORT",
+              color: white,
+              strokeColor: black,
+              textColor: "black",
+            },
+            {
+              text: "WEBSITE",
+              color: red,
+              strokeColor: white,
+              textColor: "white",
+            },
+            {
+              text: "GOOD",
+              color: red,
+              strokeColor: white,
+              textColor: "white",
+            },
+            {
+              text: "WORLD",
+              color: red,
+              strokeColor: white,
+              textColor: "white",
+            },
           ];
 
           var dropKeySection = document.querySelector(".drop-key-section");
@@ -251,7 +298,6 @@
             var windowWidth = window.innerWidth;
             var padding = Math.min(160, Math.max(20, windowWidth * 0.2)); // 패딩 값을 추가
 
-            // height 값을 반응형으로 설정 (최소 42, 최대 82)
             var height = Math.min(62, Math.max(42, windowWidth * 0.05)); // 창 크기에 따라 조정
 
             var x = centerX + (Math.random() - 0.5) * 200;
@@ -261,10 +307,11 @@
               y,
               textWidth + padding,
               height,
-              data.text,
               data.color,
-              data.textColor // 추가된 텍스트 색상
+              data.strokeColor // 외곽선 색상 설정
             );
+            body.text = data.text; // 텍스트를 Body에 추가 (하지만 Matter.js 자체에서 렌더링하지 않음)
+            body.textColor = data.textColor; // 텍스트 색상 저장
             Body.setVelocity(body, { x: (Math.random() - 0.5) * 2, y: 2 });
           });
 
@@ -305,11 +352,8 @@
           var context = render.context;
           var bodies = Composite.allBodies(engine.world);
 
-          // 현재 창 크기 기준으로 반응형 폰트 크기 설정
           var windowWidth = window.innerWidth;
-
-          // 폰트 크기 계산 (1vw = 창 너비의 1%)
-          var fontSize = Math.min(26, Math.max(14, windowWidth * 0.02)); // 최소 14px, 최대 26px
+          var fontSize = Math.min(26, Math.max(14, windowWidth * 0.02)); // 반응형 폰트 크기 설정
 
           context.textAlign = "center";
           context.textBaseline = "middle";
@@ -324,7 +368,7 @@
               context.translate(centerX, centerY);
               context.rotate(body.angle);
 
-              context.fillStyle = body.textColor || "white"; // 지정된 텍스트 색상을 사용, 없으면 기본값 흰색
+              context.fillStyle = body.textColor || "white"; // 텍스트 색상
               context.font = `500 ${fontSize}px Pretendard Variable`; // 폰트 설정
               context.fillText(body.text, 0, 0); // 텍스트 출력
               context.restore();
@@ -370,7 +414,7 @@
         <div class="container">
           <div class="visual-box">
             <div class="slider main">
-              <div class="slider-content">
+              <div class="slider-content color">
                 <div class="main-box">
                   <i></i>
                   <i></i>
@@ -397,7 +441,7 @@
                   </div>
                 </div>
               </div>
-              <div class="slider-content">
+              <div class="slider-content text">
                 <div class="main-box">
                   <span>가</span>
                   <span>나</span>
@@ -408,13 +452,11 @@
                   <div class="up">
                     <span class="first">가나다라마바사아자차카타파하</span>
                   </div>
+                  <div class="middle">
+                    <span class="first">ABCDEFGHIJKLMNOPQRSTUVWYZ</span>
+                  </div>
                   <div class="down">
-                    <span class="third"
-                      ><strong>SUB1</strong>&nbsp;#E00719 R224 G7 B25</span
-                    >
-                    <span class="fourth"
-                      ><strong>SUB2</strong>&nbsp;#FFAEDE R255 G174 B222</span
-                    >
+                    <span class="first">abcdefghijklmnopqrstuvwyz</span>
                   </div>
                 </div>
               </div>
