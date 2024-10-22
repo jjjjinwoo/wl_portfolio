@@ -825,6 +825,7 @@ header {
         width: 418px;
         display: block;
         position: absolute;
+        z-index: -1;
         background-image: url(../img/sec8/be-box.svg);
       }
       .af-box {
@@ -851,6 +852,7 @@ header {
         width: 418px;
         display: block;
         position: absolute;
+        z-index: -1;
         background-image: url(../img/sec8/af-box.svg);
       }
     }
