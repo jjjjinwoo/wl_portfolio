@@ -119,14 +119,24 @@ strong {
   }
 }
 
+// 헤더
+
+header {
+  width: 100%;
+  height: 80px;
+  background-image: url(../img/header/임시.png);
+  background-repeat: no-repeat;
+}
+
 // 섹션1 (메인섹션)
 
 .sec1 {
+  position: relative;
   background-color: $first-color;
   #main-title {
     position: sticky;
     z-index: 100;
-    top: 100px;
+    top: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;

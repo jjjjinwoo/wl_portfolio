@@ -110,13 +110,21 @@ strong {
     transform: translateY(0px);
   }
 }
+header {
+  width: 100%;
+  height: 80px;
+  background-image: url(../img/header/임시.png);
+  background-repeat: no-repeat;
+}
+
 .sec1 {
+  position: relative;
   background-color: black;
 }
 .sec1 #main-title {
   position: sticky;
   z-index: 100;
-  top: 100px;
+  top: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
