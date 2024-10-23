@@ -4,10 +4,10 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// 색상 변수
+// 색상 변수 <- 블랙, 화이트 바꿀 때 이거 수정!!
 
-const firstColor = "black";
-const secondColor = "white";
+const firstColor = "white";
+const secondColor = "black";
 
 // *섹션1: 타이핑 애니메이션
 

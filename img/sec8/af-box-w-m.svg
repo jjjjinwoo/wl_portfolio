@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="418" height="282" viewBox="0 0 418 282">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="패스_44721" data-name="패스 44721" d="M0,30,418,0V252L0,282Z" transform="translate(22616 12902.001)" fill="#686868"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_8737" data-name="그룹 8737" transform="translate(-22616 -12902.001)">
+    <path id="패스_44720" data-name="패스 44720" d="M0,30,418,0V252L0,282Z" transform="translate(22616 12902.001)" fill="#686868"/>
+    <g id="마스크_그룹_158" data-name="마스크 그룹 158" clip-path="url(#clip-path)">
+      <g id="그룹_8736" data-name="그룹 8736" transform="translate(22776.826 12989.608)" opacity="0.08">
+        <path id="패스_44304" data-name="패스 44304" d="M0,0,72.2,194.391h44.432L44.432,0Z" transform="translate(0 0)" fill="#fff"/>
+        <path id="패스_44305" data-name="패스 44305" d="M77.573,20,26,158.85H70.433L122,20Z" transform="translate(46.203 35.54)" fill="#fff"/>
+        <path id="패스_44306" data-name="패스 44306" d="M54.786,84.621l24.4,65.687h44.432L77,24.807Z" transform="translate(97.355 44.083)" fill="#fff"/>
+        <path id="패스_44307" data-name="패스 44307" d="M135.774,0l-72.2,194.391H108L180.206,0Z" transform="translate(112.968 0)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
