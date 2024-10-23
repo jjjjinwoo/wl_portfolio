@@ -9,7 +9,7 @@
     url("../font/NeutralFace.woff") format("woff");
 }
 
-// 색상 변수
+// 색상 변수  ---------------------------------------------------
 
 $first-color: white;
 $second-color: black;
@@ -18,11 +18,11 @@ $secondary-color: #fdb9e1;
 $sub-color-1: grey;
 $sub-color-2: grey;
 
-// 글꼴 변수
+// 글꼴 변수  ---------------------------------------------------
 
 $main-font: "Pretendard Variable", sans-serif;
 
-// 공통
+// 공통  ---------------------------------------------------
 
 body {
   font-family: "Pretendard Variable", sans-serif;
@@ -66,7 +66,7 @@ main.black .reverse-box {
   display: none;
 }
 
-// 애니메이션
+// 애니메이션  ---------------------------------------------------
 
 @keyframes textFill {
   0% {
@@ -133,7 +133,7 @@ main.black .reverse-box {
   }
 }
 
-// 헤더
+// 헤더  ---------------------------------------------------
 
 header {
   width: 100%;
@@ -142,7 +142,7 @@ header {
   background-repeat: no-repeat;
 }
 
-// 블랙 버전
+// 블랙 버전  ---------------------------------------------------
 
 main.black {
   // 섹션1
@@ -1000,7 +1000,7 @@ main.black {
   }
 }
 
-// 화이트 버전
+// 화이트 버전  ---------------------------------------------------
 
 main.white {
   // 섹션1
@@ -1903,12 +1903,23 @@ main.white {
   }
 }
 
-// 공통 수정사항
+// 공통 수정사항 ---------------------------------------------------
+
 .sec1 .container .img-box {
   display: flex;
   justify-content: center;
   img {
     width: 100%;
+  }
+}
+
+.sec3 {
+  .bg-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -1969,7 +1980,7 @@ main.white {
   }
 }
 
-// 푸터
+// 푸터  ---------------------------------------------------
 
 footer {
   .up {
@@ -2022,7 +2033,7 @@ footer {
   }
 }
 
-// 미디어쿼리
+// 미디어쿼리  ---------------------------------------------------
 
 @media (max-width: 1800px) {
   .sec1 {
@@ -2121,7 +2132,7 @@ footer {
   }
 }
 
-// 태블릿 분기점
+// 태블릿 분기점  ---------------------------------------------------
 
 @media (max-width: 1024px) {
   .category {
@@ -2252,7 +2263,6 @@ footer {
         height: 190px !important;
         width: 282px !important;
         margin: 0 !important;
-        transform: skew(0deg, -4deg);
       }
       .solution .af-box::before {
         height: 190px !important;
@@ -2263,14 +2273,8 @@ footer {
         height: 190px !important;
         width: 282px !important;
         margin: 0 !important;
-        transform: skew(0deg, -4deg);
       }
-      .solution.second .be-box {
-        transform: skew(0deg, 4deg);
-      }
-      .solution.second .af-box {
-        transform: skew(0deg, 4deg);
-      }
+
       .solution .be-box p {
         font-size: 14px !important;
         line-height: 28px !important;
@@ -2292,7 +2296,7 @@ footer {
         background-image: url(../img/sec8/af-box-m-mob.svg) !important;
       }
       .solution {
-        transform: translateY(50px);
+        transform: rotateY(90deg);
       }
     }
   }
@@ -2309,11 +2313,14 @@ footer {
     height: 516px !important;
     .container {
       row-gap: 20px !important;
+      padding: 0 20px;
+      box-sizing: border-box;
       img {
         width: 286px;
       }
       p {
         font-size: 14px !important;
+        line-height: 1.5;
       }
       h3 {
         font-size: 24px !important;
@@ -2400,5 +2407,21 @@ footer {
 @media (max-width: 500px) {
   .sec1 .bg-box .line {
     scale: 0.2 !important;
+  }
+}
+
+// 모바일 분기점  ---------------------------------------------------
+
+@media (max-width: 480px) {
+  .sec2 {
+    .container .text-box {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+  footer {
+    .up a:not(a.middle) strong {
+      display: none;
+    }
   }
 }

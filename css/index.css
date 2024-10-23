@@ -1815,6 +1815,14 @@ main.white .sec8.pc .sec9 .black-bg {
   width: 100%;
 }
 
+.sec3 .bg-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .sec5 {
   overflow: hidden;
 }
@@ -2128,7 +2136,6 @@ footer .down {
     height: 190px !important;
     width: 282px !important;
     margin: 0 !important;
-    transform: skew(0deg, -4deg);
   }
   .sec8 .container .solution .af-box::before {
     height: 190px !important;
@@ -2139,13 +2146,6 @@ footer .down {
     height: 190px !important;
     width: 282px !important;
     margin: 0 !important;
-    transform: skew(0deg, -4deg);
-  }
-  .sec8 .container .solution.second .be-box {
-    transform: skew(0deg, 4deg);
-  }
-  .sec8 .container .solution.second .af-box {
-    transform: skew(0deg, 4deg);
   }
   .sec8 .container .solution .be-box p {
     font-size: 14px !important;
@@ -2168,7 +2168,7 @@ footer .down {
     background-image: url(../img/sec8/af-box-m-mob.svg) !important;
   }
   .sec8 .container .solution {
-    transform: translateY(50px);
+    transform: rotateY(90deg);
   }
   .sec8.mob {
     display: block;
@@ -2184,12 +2184,15 @@ footer .down {
   }
   .sec9 .container {
     row-gap: 20px !important;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
   .sec9 .container img {
     width: 286px;
   }
   .sec9 .container p {
     font-size: 14px !important;
+    line-height: 1.5;
   }
   .sec9 .container h3 {
     font-size: 24px !important;
@@ -2261,5 +2264,14 @@ footer .down {
 @media (max-width: 500px) {
   .sec1 .bg-box .line {
     scale: 0.2 !important;
+  }
+}
+@media (max-width: 480px) {
+  .sec2 .container .text-box {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  footer .up a:not(a.middle) strong {
+    display: none;
   }
 }/*# sourceMappingURL=index.css.map */

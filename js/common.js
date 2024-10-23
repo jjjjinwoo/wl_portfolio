@@ -248,24 +248,6 @@ gsap.to(".sec8.mob .solution.first", {
   transform: "translateY(0px)",
 });
 
-gsap.to(".sec8.mob .solution.first .be-box", {
-  scrollTrigger: {
-    trigger: ".sec8.mob",
-    start: "0% 50%",
-    end: "0% 50%",
-  },
-  transform: "skew(0)",
-});
-
-gsap.to(".sec8.mob .solution.first .af-box", {
-  scrollTrigger: {
-    trigger: ".sec8.mob",
-    start: "0% 50%",
-    end: "0% 50%",
-  },
-  transform: "skew(0)",
-});
-
 gsap.to(".sec8.mob .solution.second", {
   scrollTrigger: {
     trigger: ".sec8.mob",
@@ -276,24 +258,6 @@ gsap.to(".sec8.mob .solution.second", {
   transform: "translateY(0px)",
 });
 
-gsap.to(".sec8.mob .solution.second .be-box", {
-  scrollTrigger: {
-    trigger: ".sec8.mob",
-    start: "30% 50%",
-    end: "30% 50%",
-  },
-  transform: "skew(0)",
-});
-
-gsap.to(".sec8.mob .solution.second .af-box", {
-  scrollTrigger: {
-    trigger: ".sec8.mob",
-    start: "30% 50%",
-    end: "30% 50%",
-  },
-  transform: "skew(0)",
-});
-
 gsap.to(".sec8.mob .solution.third", {
   scrollTrigger: {
     trigger: ".sec8.mob",
@@ -302,22 +266,4 @@ gsap.to(".sec8.mob .solution.third", {
   },
   opacity: 1,
   transform: "translateY(0px)",
-});
-
-gsap.to(".sec8.mob .solution.third .be-box", {
-  scrollTrigger: {
-    trigger: ".sec8.mob",
-    start: "60% 50%",
-    end: "60% 50%",
-  },
-  transform: "skew(0)",
-});
-
-gsap.to(".sec8.mob .solution.third .af-box", {
-  scrollTrigger: {
-    trigger: ".sec8.mob",
-    start: "60% 50%",
-    end: "60% 50%",
-  },
-  transform: "skew(0)",
 });
