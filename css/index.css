@@ -2017,6 +2017,10 @@ footer .down {
     top: 434px !important;
     scale: 0.5 !important;
   }
+  .sec1 .bg-box .text img {
+    top: 1vw !important;
+    width: 1500px !important;
+  }
   .sec2 {
     padding: 0px 20px 100px !important;
     box-sizing: border-box;
@@ -2247,5 +2251,15 @@ footer .down {
   .sec1 .bg-box .line {
     top: 300px !important;
     scale: 0.3 !important;
+  }
+}
+@media (max-width: 500px) {
+  .sec1 .bg-box .line {
+    scale: 0.25 !important;
+  }
+}
+@media (max-width: 500px) {
+  .sec1 .bg-box .line {
+    scale: 0.2 !important;
   }
 }/*# sourceMappingURL=index.css.map */
