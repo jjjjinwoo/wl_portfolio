@@ -6,6 +6,7 @@
     <title>Document</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/common.css" />
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <!-- 스크롤 트리거 -->
@@ -22,7 +23,71 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
   </head>
   <body>
-    <header></header>
+    <header id="header">
+      <div class="header-inner">
+        <h1>
+          <a
+            href="/index.php"
+            class="logo-off"
+            onclick="gtag('event', 'click', {'event_category': 'button', 'event_label': '홈'});"
+          >
+            <svg
+              version="1.1"
+              id="Layer_1"
+              class="logo_svg"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 500 500"
+              style="enable-background: new 0 0 500 500"
+              xml:space="preserve"
+            >
+              <g>
+                <polygon
+                  class="logo_svg_g"
+                  points="214.5,183.2 170.2,316 133.8,420.9 206.8,420.9 286.3,183.1 	"
+                ></polygon>
+                <polygon
+                  class="logo_svg_b"
+                  points="91,79.6 19.8,79.6 133.8,420.9 170.2,316 	"
+                ></polygon>
+                <polygon
+                  class="logo_svg_g"
+                  points="407.5,79.1 328.4,315.4 292.8,420.9 365.7,420.9 480.2,79.1 	"
+                ></polygon>
+                <polygon
+                  class="logo_svg_b"
+                  points="295.5,214.9 295.3,214.1 258.7,322.9 292.8,420.9 328.4,315.4 	"
+                ></polygon>
+              </g>
+            </svg>
+          </a>
+          <a
+            href="/index.php"
+            class="logo-on"
+            onclick="gtag('event', 'click', {'event_category': 'button', 'event_label': '홈'});"
+          >
+            <img src="common/img/common/logo_white.svg" alt="위버로프트" />
+          </a>
+        </h1>
+        <div id="all-menu-wrap">
+          <a
+            class="all-menu-btn"
+            href="javascript:;"
+            title="메뉴"
+            aria-label="메뉴 열기"
+            onclick="gtag('event', 'click', {'event_category': 'Common', 'event_label': 'Navigation'});"
+          >
+            <!-- <a class="all-menu-btn" href="javascript:;" title="메뉴" aria-label="메뉴 열기" onclick="gtag('event', 'click', {'event_category': 'Common', 'event_label': 'Navigation'});"> -->
+            메뉴
+            <span class="all-menu-btn-line all-menu-btn-line-01"></span>
+            <span class="all-menu-btn-line all-menu-btn-line-02"></span>
+            <span class="all-menu-btn-line all-menu-btn-line-03"></span>
+          </a>
+        </div>
+      </div>
+    </header>
     <main class="black">
       <section class="sec1">
         <div id="main-title">
@@ -658,19 +723,95 @@
         </div>
         <div class="black-bg"></div>
       </section>
+      <section class="sec10">
+        <div class="container">
+          <a class="left" href="#">
+            <span><strong>PREV</strong>위버로프트</span>
+          </a>
+          <a class="middle" href="#"></a>
+          <a href="#" class="right">
+            <span><strong>NEXT</strong>위버로프트</span></a
+          >
+        </div>
+      </section>
     </main>
-    <footer>
-      <div class="up">
-        <a class="left" href="#">
-          <span><strong>PREV</strong>위버로프트</span>
-        </a>
-        <a class="middle" href="#"></a>
-        <a href="#" class="right">
-          <span><strong>NEXT</strong>위버로프트</span></a
-        >
+    <footer id="footer">
+      <div class="footer-inner">
+        <p class="logo">
+          <a href="/index.php"
+            ><img src="common/img/common/footer_logo.svg" alt="위버로프트"
+          /></a>
+        </p>
+        <p class="address">
+          서울 구로구 디지털로 26길 123 지플러스타워 4F, 407호 408호
+        </p>
+        <p class="notice">
+          <span
+            >E-mail.
+            <a href="mailto:ms@weaverloft.com">ms@weaverloft.com</a></span
+          ><span>Tel. <a href="tel:028587492">02-858-7492</a></span
+          ><span>Business hour. Mon ~ Fri / 10:00 am ~ 5:00 pm</span>
+        </p>
+        <ul class="sns">
+          <!-- <li class="f-twitter"><a href="http://twitter.com/weaverloft" target="_blank" alt="위버로프트 트위터">위버로프트 트위터</a></li> -->
+          <li class="f-facebook">
+            <a
+              href="http://www.facebook.com/WeaverLoft"
+              target="_blank"
+              alt="위버로프트 페이스북"
+              >위버로프트 페이스북</a
+            >
+          </li>
+          <li class="f-instagram">
+            <a
+              href="https://www.instagram.com/weaverloft"
+              target="_blank"
+              alt="위버로프트 인스타그램"
+              >위버로프트 인스타그램</a
+            >
+          </li>
+          <li class="f-blog">
+            <a
+              href="https://www.weaverloft.com/blog/sub/home.php"
+              target="_blank"
+              alt="위버로프트 블로그"
+              >위버로프트 블로그</a
+            >
+          </li>
+        </ul>
+        <p class="copyright">© Weaverloft. All rights reserved.</p>
+        <!-- <ul class="sns">
+              <li><a href="http://twitter.com/weaverloft" target="_blank" alt="위버로프트 트위터">위버로프트 트위터</a></li>
+              <li><a href="http://www.facebook.com/WeaverLoft" target="_blank" alt="위버로프트 페이스북">위버로프트 페이스북</a></li>
+          </ul> -->
       </div>
-      <div class="down"></div>
     </footer>
+    <div id="quick-btn">
+      <a href="javascript:;" tabindex="0">
+        <div class="hover-img">
+          <span class="qa-img">
+            <!-- <img
+              src="common/img/common/airplane-white.svg"
+              alt="프로젝트 의뢰하기"
+            /> -->
+          </span>
+          <span class="qa-txt"><em>의뢰하기</em></span>
+        </div>
+      </a>
+    </div>
+    <div id="top-btn">
+      <a href="javascript:;" tabindex="0">
+        <div class="hover-img">
+          <span class="top-img"
+            ><img
+              src="common/img/common/ico_select_arrow_grey.svg"
+              alt="페이지 맨 위로"
+          /></span>
+          <span class="top-txt"><em>TOP</em></span>
+        </div>
+      </a>
+    </div>
+
     <script src="./js/index.js"></script>
     <script src="./js/common.js"></script>
   </body>
