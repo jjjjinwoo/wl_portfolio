@@ -51,18 +51,18 @@ ScrollTrigger.matchMedia({
       },
       clipPath: "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)",
     });
-  },
-});
 
-gsap.to(".sec5 .main-box", {
-  scrollTrigger: {
-    trigger: ".sec5",
-    start: "0% 50%",
-    end: "100% 50%",
-    scrub: 1,
-    // markers: true,
+    gsap.to(".sec5 .main-box", {
+      scrollTrigger: {
+        trigger: ".sec5",
+        start: "0% 50%",
+        end: "100% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+      "column-gap": "10px",
+    });
   },
-  "column-gap": "10px",
 });
 
 // *섹션4: 이미지 슬라이드

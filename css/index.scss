@@ -2197,16 +2197,17 @@ footer {
       box-sizing: border-box;
       .visual-box {
         position: relative !important;
-        clip-path: none !important;
         overflow: hidden !important;
         margin-left: 0 !important;
         width: 100% !important;
         height: 200px !important;
+
         .slider-content {
           height: 200px !important;
           .main-box {
             top: 0 !important;
             padding-left: 20px !important;
+            column-gap: 20px !important;
             i {
               top: 40px !important;
               width: 120px !important;
@@ -2321,6 +2322,8 @@ footer {
       p {
         font-size: 14px !important;
         line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
       }
       h3 {
         font-size: 24px !important;
@@ -2381,6 +2384,10 @@ footer {
         }
       }
     }
+  }
+
+  main.black .sec5 .container .visual-box {
+    clip-path: none;
   }
 }
 

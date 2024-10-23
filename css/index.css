@@ -2068,8 +2068,6 @@ footer .down {
   }
   .sec5 .container .visual-box {
     position: relative !important;
-    -webkit-clip-path: none !important;
-            clip-path: none !important;
     overflow: hidden !important;
     margin-left: 0 !important;
     width: 100% !important;
@@ -2081,6 +2079,8 @@ footer .down {
   .sec5 .container .visual-box .slider-content .main-box {
     top: 0 !important;
     padding-left: 20px !important;
+    -moz-column-gap: 20px !important;
+         column-gap: 20px !important;
   }
   .sec5 .container .visual-box .slider-content .main-box i {
     top: 40px !important;
@@ -2193,6 +2193,8 @@ footer .down {
   .sec9 .container p {
     font-size: 14px !important;
     line-height: 1.5;
+    text-align: center;
+    word-break: keep-all;
   }
   .sec9 .container h3 {
     font-size: 24px !important;
@@ -2242,6 +2244,10 @@ footer .down {
   }
   main.white .sec8 .container .solution.second .af-box::before {
     background-image: url(../img/sec8/af-box-w-m-mob.svg) !important;
+  }
+  main.black .sec5 .container .visual-box {
+    -webkit-clip-path: none;
+            clip-path: none;
   }
 }
 @media (max-width: 800px) {
