@@ -2072,6 +2072,8 @@ footer .down {
     margin-left: 0 !important;
     width: 100% !important;
     height: 200px !important;
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
   }
   .sec5 .container .visual-box .slider-content {
     height: 200px !important;
@@ -2244,10 +2246,6 @@ footer .down {
   }
   main.white .sec8 .container .solution.second .af-box::before {
     background-image: url(../img/sec8/af-box-w-m-mob.svg) !important;
-  }
-  main.black .sec5 .container .visual-box {
-    -webkit-clip-path: none;
-            clip-path: none;
   }
 }
 @media (max-width: 800px) {

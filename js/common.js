@@ -38,6 +38,18 @@ gsap.to("#main-title", {
   top: "50vh",
 });
 
+// *섹션4: 이미지 슬라이드
+
+$(document).ready(function () {
+  $(".sec4 .img-box").slick({
+    autoplay: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    autoplaySpeed: 3000,
+    fade: true,
+  });
+});
+
 // *섹션5: 영역 펼쳐지는 이벤트
 
 ScrollTrigger.matchMedia({
@@ -65,18 +77,6 @@ ScrollTrigger.matchMedia({
   },
 });
 
-// *섹션4: 이미지 슬라이드
-
-$(document).ready(function () {
-  $(".sec4 .img-box").slick({
-    autoplay: true,
-    pauseOnFocus: false,
-    pauseOnHover: false,
-    autoplaySpeed: 3000,
-    fade: true,
-  });
-});
-
 // *섹션5: 슬라이더
 
 $(document).ready(function () {
@@ -86,12 +86,13 @@ $(document).ready(function () {
     fade: true,
     pauseOnHover: false,
     pauseOnFocus: true,
-    speed: 0,
+    speed: 500,
     asNavFor: ".sec5 .slider.sub1",
   });
 
   const sec5ColorIcon = document.querySelectorAll(".sec5 .main-box i");
   const sec5TextIcon = document.querySelectorAll(".sec5 .main-box span");
+  const sec5VisualBox = document.querySelector(".sec5 .visual-box");
 
   $(".sec5 .slider.main").on("beforeChange", function () {
     for (var i = 0; i < sec5ColorIcon.length; i++) {
@@ -100,6 +101,18 @@ $(document).ready(function () {
     for (var i = 0; i < sec5TextIcon.length; i++) {
       sec5TextIcon[i].style.display = "none";
     }
+    sec5VisualBox.style.clipPath =
+      "polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%)";
+    sec5VisualBox.style.transition = "0.5s";
+
+    setTimeout(() => {
+      sec5VisualBox.style.clipPath =
+        "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)";
+    }, 500);
+
+    setTimeout(() => {
+      sec5VisualBox.style.transition = "none";
+    }, 1000);
   });
   $(".sec5 .slider.main").on("afterChange", function () {
     for (var i = 0; i < sec5ColorIcon.length; i++) {

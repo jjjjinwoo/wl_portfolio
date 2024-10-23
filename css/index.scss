@@ -394,6 +394,7 @@ main.black {
         width: 58%;
         background-color: $first-color;
         clip-path: polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%);
+        // transition: 0.5s;
         .slider.main {
           width: 1500px;
           height: 100%;
@@ -2201,7 +2202,7 @@ footer {
         margin-left: 0 !important;
         width: 100% !important;
         height: 200px !important;
-
+        clip-path: none !important;
         .slider-content {
           height: 200px !important;
           .main-box {
@@ -2384,10 +2385,6 @@ footer {
         }
       }
     }
-  }
-
-  main.black .sec5 .container .visual-box {
-    clip-path: none;
   }
 }
 

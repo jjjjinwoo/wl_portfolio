@@ -72,8 +72,8 @@
         </div>
       </section>
       <section class="drop-key-section sec3">
+        <div id="particles-js"></div>
         <div class="reverse-box"></div>
-        </div>
       </section>
       <script>
         var Engine = Matter.Engine,
@@ -187,6 +187,27 @@
           World.add(world, [ground, wallLeft, wallRight, ceiling]);
         }
 
+        function createCircleBody(x, y, size, colors) {
+          // 두 가지 색상 중 하나를 랜덤으로 선택
+          var fillStyle = colors[Math.floor(Math.random() * colors.length)];
+          var strokeColor = fillStyle === "black" ? "white" : "black"; // 색상에 따라 외곽선 색상 설정
+
+          var body = Bodies.circle(x, y, size / 2, {
+            // size를 반지름으로 사용
+            render: {
+              fillStyle: fillStyle, // 랜덤 선택된 색상
+              strokeStyle: strokeColor, // 외곽선 색상 설정
+              lineWidth: 2, // 선 두께
+            },
+            isStatic: false,
+            restitution: 0.5,
+            friction: 0.2,
+          });
+
+          objects.push(body);
+          return body;
+        }
+
         function createTextBody(x, y, width, height, fillStyle, strokeColor) {
           var body = Bodies.rectangle(x, y, width, height, {
             chamfer: {
@@ -263,8 +284,9 @@
           var sectionHeight = dropKeySection.offsetHeight;
 
           var centerX = sectionWidth / 2;
-          var yStart = 50; // 화면 상단에서 시작
+          var yStart = 0; // 화면 상단에서 시작
 
+          // 텍스트 오브젝트 생성
           bodyData.forEach((data, index) => {
             var textWidth = getTextWidth(data.text);
             var windowWidth = window.innerWidth;
@@ -286,6 +308,28 @@
             body.textColor = data.textColor; // 텍스트 색상 저장
             Body.setVelocity(body, { x: (Math.random() - 0.5) * 2, y: 2 });
           });
+
+          // 원형 오브젝트 추가 (검정색과 하얀색, 외곽선 반대 색상으로 설정)
+          var circleColors = ["black", "white"]; // 두 가지 색상 (검정, 하양)
+          for (var i = 0; i < 3; i++) {
+            // 원하는 수만큼의 원형 오브젝트 생성
+            var windowWidth = window.innerWidth;
+            var size = Math.min(80, Math.max(42, windowWidth * 0.05)); // 텍스트와 동일한 반응형 크기
+
+            var x = centerX + (Math.random() - 0.5) * sectionWidth * 0.8; // 랜덤한 X 위치
+            var y = yStart + i * 10;
+
+            var circleBody = createCircleBody(
+              x,
+              y,
+              size, // 텍스트와 동일한 크기로 설정
+              circleColors // 두 가지 색상 전달
+            );
+            Body.setVelocity(circleBody, {
+              x: (Math.random() - 0.5) * 2,
+              y: 2,
+            });
+          }
 
           World.add(world, objects);
         }
@@ -375,6 +419,7 @@
           resizeCanvas();
         }
       </script>
+
       <section class="sec4">
         <div class="img-box">
           <div class="first"></div>
