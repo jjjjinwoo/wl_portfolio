@@ -397,15 +397,17 @@ function createObjects(width, height) {
   var centerX = sectionWidth / 2;
   var yStart = -200; // 화면 상단에서 시작
 
+  var height = Math.min(100, Math.max(40, width * 0.05)); // 창 크기에 따라 조정
+
   // 텍스트 오브젝트 생성
   bodyData.forEach((data, index) => {
     //아이템 너비 조절
     if (width > 1024) {
-      textWidth = 300;
+      textWidth = 240;
     } else {
-      textWidth = 200;
+      textWidth = 100;
     }
-    var height = Math.min(100, Math.max(56, width * 0.05)); // 창 크기에 따라 조정
+
     var x = centerX + (Math.random() - 0.5) * 600;
     var y = yStart + index * 10;
     var body = createTextBody(
@@ -424,7 +426,6 @@ function createObjects(width, height) {
   var circleColors = ["black", "white"]; // 두 가지 색상 (검정, 하양)
   for (var i = 0; i < 3; i++) {
     // 원하는 수만큼의 원형 오브젝트 생성
-    var size = Math.min(80, Math.max(42, width * 0.05)); // 텍스트와 동일한 반응형 크기
 
     var x = centerX + (Math.random() - 0.5) * width * 0.8; // 랜덤한 X 위치
     var y = yStart + i * 10;
@@ -432,7 +433,7 @@ function createObjects(width, height) {
     var circleBody = createCircleBody(
       x,
       y,
-      size, // 텍스트와 동일한 크기로 설정
+      height, // 텍스트와 동일한 크기로 설정
       circleColors // 두 가지 색상 전달
     );
   }
@@ -501,9 +502,9 @@ function renderText() {
   var windowWidth = window.innerWidth;
   //폰트 사이즈 조절
   if (sectionWidth > 1024) {
-    var fontSize = 30; // 반응형 폰트 크기 설정
+    var fontSize = 38; // 반응형 폰트 크기 설정
   } else {
-    var fontSize = 20; // 반응형 폰트 크기 설정
+    var fontSize = 14; // 반응형 폰트 크기 설정
   }
 
   context.textAlign = "center";
@@ -583,3 +584,5 @@ if (sectionWidth >= 1024 && !resizeChkWindow02) {
   resizeChkWindow = false;
 }
 window.addEventListener("resize", () => handleResize(dropKeySection));
+
+createObjects(sectionWidth, sectionHeight);
