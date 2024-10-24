@@ -52,7 +52,10 @@ gsap.to(".sec3", {
     start: "100% 50%",
     end: "100% 50%",
     scrub: 2,
-    onEnter: resizeCanvas,
+    onEnter: () => {
+      objects.forEach((body) => Composite.remove(engine.world, body));
+      createObjects(sectionWidth, sectionHeight);
+    },
   },
   backgroundColor: secondColor,
 });
