@@ -270,3 +270,14 @@ gsap.to(".sec8.mob .solution.third", {
   opacity: 1,
   transform: "translateY(0px)",
 });
+
+// 모바일 리사이즈
+
+lastWidth = window.innerWidth;
+$(window).resize(function () {
+  if (window.innerWidth != lastWidth) {
+    location.reload();
+    scrollTrigger.refresh();
+  }
+  lastWidth = window.innerWidth;
+});

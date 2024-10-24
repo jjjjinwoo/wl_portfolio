@@ -1512,6 +1512,8 @@ main.white .sec6.mob .container .img-area {
   border-radius: 14px;
   opacity: 0;
   transform: translateY(50px);
+}
+main.white .sec6.mob .container .img-area:not(.img-area.first) {
   filter: drop-shadow(0px 40px 20px rgba(0, 0, 0, 0.2));
 }
 main.white .sec6.mob .container .img-area::before {
@@ -1544,6 +1546,15 @@ main.white .sec6.mob .container .img-area.third {
 }
 main.white .sec6.mob .container .img-area.third::before {
   content: "SUB PAGE 2";
+}
+main.white .sec6.mob figure .fake-img {
+  background-image: url(../img/sec6/device-w.png);
+}
+main.white .sec6.mob figure .fake-img::before {
+  color: black;
+}
+main.white .sec6.mob figure::before {
+  background-color: #f8f8f8;
 }
 main.white .sec7.pc {
   position: relative;

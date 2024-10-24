@@ -1586,6 +1586,8 @@ main.white {
         border-radius: 14px;
         opacity: 0;
         transform: translateY(50px);
+      }
+      .img-area:not(.img-area.first) {
         filter: drop-shadow(0px 40px 20px rgba(0, 0, 0, 0.2));
       }
       .img-area::before {
@@ -1619,6 +1621,15 @@ main.white {
       .img-area.third::before {
         content: "SUB PAGE 2";
       }
+    }
+    figure .fake-img {
+      background-image: url(../img/sec6/device-w.png);
+    }
+    figure .fake-img::before {
+      color: black;
+    }
+    figure::before {
+      background-color: #f8f8f8;
     }
   }
 
