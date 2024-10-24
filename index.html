@@ -476,7 +476,7 @@
         // window.addEventListener('resize', resizeCanvas);
         var timer = null;
         $(window).on("load onorientationchange resize", function (e) {
-          clearTimeout(timer);
+          if (window.innerWidth > 480) clearTimeout(timer);
           timer = setTimeout(resizeM, 100); //화면 변경이 끝난후 0.1s뒤에 작동
         });
 
