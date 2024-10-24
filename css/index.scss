@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
 @import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @font-face {
   font-family: "Neutral Face Regular";
   font-style: normal;
@@ -245,6 +246,10 @@ main.black {
               animation-timing-function: linear;
             }
           }
+          .wrap.first.mob {
+            display: none;
+            background: url(../img/sec1/line1-mob.svg) no-repeat;
+          }
           .wrap.second {
             position: absolute;
             rotate: 180deg;
@@ -268,6 +273,10 @@ main.black {
               animation-iteration-count: infinite;
               animation-timing-function: linear;
             }
+          }
+          .wrap.second.mob {
+            display: none;
+            background: url(../img/sec1/line2-mob.svg) no-repeat;
           }
         }
       }
@@ -362,6 +371,15 @@ main.black {
     .reverse-box {
       opacity: 1;
       pointer-events: none;
+    }
+    .img-box.mob {
+      display: none;
+      div.first {
+        background-image: url(../img/sec4/mockup1-mob.jpg);
+      }
+      div.second {
+        background-image: url(../img/sec4/mockup2-mob.jpg);
+      }
     }
   }
 
@@ -721,8 +739,8 @@ main.black {
       row-gap: 100px;
       align-items: center;
       .img-area {
-        width: 222px;
-        height: 460px;
+        width: 300px;
+        height: 600px;
         background-color: #cccccc;
         background-size: cover;
         border-radius: 14px;
@@ -1103,6 +1121,10 @@ main.white {
               animation-timing-function: linear;
             }
           }
+          .wrap.first.mob {
+            display: none;
+            background: url(../img/sec1/line1-w-mob.svg) no-repeat;
+          }
           .wrap.second {
             position: absolute;
             rotate: 180deg;
@@ -1125,6 +1147,10 @@ main.white {
               animation-iteration-count: infinite;
               animation-timing-function: linear;
             }
+          }
+          .wrap.second.mob {
+            display: none;
+            background: url(../img/sec1/line2-w-mob.svg) no-repeat;
           }
         }
       }
@@ -1579,8 +1605,8 @@ main.white {
       row-gap: 100px;
       align-items: center;
       .img-area {
-        width: 222px;
-        height: 460px;
+        width: 300px;
+        height: 600px;
         background-color: #cccccc;
         background-size: cover;
         border-radius: 14px;
@@ -1930,6 +1956,17 @@ main.white {
   }
 }
 
+.sec4 .img-box.mob {
+  display: none;
+  aspect-ratio: 7 / 8 !important;
+  div.first {
+    background-image: url(../img/sec4/mockup1-mob.jpg);
+  }
+  div.second {
+    background-image: url(../img/sec4/mockup2-mob.jpg);
+  }
+}
+
 .sec5 {
   overflow: hidden;
 }
@@ -1951,8 +1988,8 @@ main.white {
     top: 0;
     .fake-img {
       position: relative;
-      width: 240px;
-      height: 466px;
+      width: 318px;
+      height: 618px;
       background-image: url(../img/sec6/device.png);
       background-size: contain;
       background-repeat: no-repeat;
@@ -1973,7 +2010,7 @@ main.white {
     content: "curtain";
     font-size: 0;
     display: block;
-    width: 240px;
+    width: 318px;
     height: calc(21vh - 8px);
     background-color: #0a0a0a;
   }
@@ -2497,6 +2534,22 @@ main.white {
       margin-top: 150px !important;
       height: 10rem !important;
     }
+    .wrap.first.pc {
+      display: none !important;
+    }
+    .wrap.first.mob {
+      display: block !important;
+    }
+    .wrap .circle {
+      width: 50px !important;
+      height: 50px !important;
+    }
+    .wrap.second.pc {
+      display: none !important;
+    }
+    .wrap.second.mob {
+      display: block !important;
+    }
   }
 
   .sec2 {
@@ -2513,6 +2566,14 @@ main.white {
 
   .sec3 {
     height: 244px !important;
+  }
+
+  .sec4 .img-box.pc {
+    display: none;
+  }
+
+  .sec4 .img-box.mob {
+    display: block !important;
   }
 
   .sec10 {

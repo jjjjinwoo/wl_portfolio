@@ -342,6 +342,7 @@ function createTextBody(x, y, width, height, fillStyle, strokeColor) {
   return body;
 }
 let textWidth;
+
 function createObjects(width, height) {
   objects = []; //배열 초기화 (반응형때 렌더링을 새로 한다면 필요 아니면 X)
 
@@ -397,23 +398,23 @@ function createObjects(width, height) {
   var centerX = sectionWidth / 2;
   var yStart = -200; // 화면 상단에서 시작
 
-  var height = Math.min(100, Math.max(40, width * 0.05)); // 창 크기에 따라 조정
+  var padding = 40; // 텍스트 주변에 추가할 패딩 값
+  var height = Math.min(120, Math.max(50, width * 0.1)); // 창 크기에 따라 조정
 
   // 텍스트 오브젝트 생성
   bodyData.forEach((data, index) => {
-    //아이템 너비 조절
-    if (width > 1024) {
-      textWidth = 240;
-    } else {
-      textWidth = 100;
-    }
+    // 텍스트의 실제 너비 계산
+    var textWidth = getTextWidth(data.text);
+
+    // 아이템 너비는 텍스트의 너비에 패딩 값을 추가한 값으로 설정
+    var itemWidth = textWidth + 80;
 
     var x = centerX + (Math.random() - 0.5) * 600;
     var y = yStart + index * 10;
     var body = createTextBody(
       x,
       y,
-      textWidth,
+      itemWidth, // 텍스트에 패딩을 추가한 너비
       height,
       data.color,
       data.strokeColor // 외곽선 색상 설정
@@ -487,10 +488,23 @@ Events.on(render, "afterRender", renderText);
 Render.run(render); //렌더 실행
 var renner = Runner.create(); //러너 생성
 Runner.run(renner, engine); //생성한 업데이트와 물리 엔진 업데이트
-
+var fontSize;
+//폰트 사이즈 조절
+if (sectionWidth > 1024) {
+  fontSize = 38; // 반응형 폰트 크기 설정
+} else {
+  fontSize = 14; // 반응형 폰트 크기 설정
+}
 function getTextWidth(text) {
+  //폰트 사이즈 조절
+  if (sectionWidth > 1024) {
+    fontSize = 38; // 반응형 폰트 크기 설정
+  } else {
+    fontSize = 14; // 반응형 폰트 크기 설정
+  }
   var canvas = document.createElement("canvas");
   var context = canvas.getContext("2d");
+  context.font = `500 ${fontSize}px Pretendard Variable`;
   return context.measureText(text).width;
 }
 
@@ -498,14 +512,13 @@ function getTextWidth(text) {
 function renderText() {
   var context = render.context;
   var bodies = Composite.allBodies(engine.world);
-
-  var windowWidth = window.innerWidth;
   //폰트 사이즈 조절
   if (sectionWidth > 1024) {
-    var fontSize = 38; // 반응형 폰트 크기 설정
+    fontSize = 38; // 반응형 폰트 크기 설정
   } else {
-    var fontSize = 14; // 반응형 폰트 크기 설정
+    fontSize = 14; // 반응형 폰트 크기 설정
   }
+  var windowWidth = window.innerWidth;
 
   context.textAlign = "center";
   context.textBaseline = "middle";
@@ -521,7 +534,7 @@ function renderText() {
       context.rotate(body.angle);
 
       context.fillStyle = body.textColor || "white"; // 텍스트 색상
-      context.font = `500 ${fontSize}px Pretendard Variable`; // 폰트 설정
+      context.font = `500 ${fontSize}px Orbitron`; // 폰트 설정
       context.fillText(body.text, 0, 0); // 텍스트 출력
       context.restore();
     }

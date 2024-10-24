@@ -1,5 +1,6 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
 @import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @font-face {
   font-family: "Neutral Face Regular";
   font-style: normal;
@@ -229,6 +230,10 @@ main.black .sec1 .container .bg-box .line .wrap.first .circle {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+main.black .sec1 .container .bg-box .line .wrap.first.mob {
+  display: none;
+  background: url(../img/sec1/line1-mob.svg) no-repeat;
+}
 main.black .sec1 .container .bg-box .line .wrap.second {
   position: absolute;
   rotate: 180deg;
@@ -250,6 +255,10 @@ main.black .sec1 .container .bg-box .line .wrap.second .circle {
   animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+main.black .sec1 .container .bg-box .line .wrap.second.mob {
+  display: none;
+  background: url(../img/sec1/line2-mob.svg) no-repeat;
 }
 main.black .sec1 .container .black-box {
   background-color: white;
@@ -333,6 +342,15 @@ main.black .sec4 .img-box div.second {
 main.black .sec4 .reverse-box {
   opacity: 1;
   pointer-events: none;
+}
+main.black .sec4 .img-box.mob {
+  display: none;
+}
+main.black .sec4 .img-box.mob div.first {
+  background-image: url(../img/sec4/mockup1-mob.jpg);
+}
+main.black .sec4 .img-box.mob div.second {
+  background-image: url(../img/sec4/mockup2-mob.jpg);
 }
 main.black .sec5 {
   height: 1012px;
@@ -688,8 +706,8 @@ main.black .sec6.mob .container {
   align-items: center;
 }
 main.black .sec6.mob .container .img-area {
-  width: 222px;
-  height: 460px;
+  width: 300px;
+  height: 600px;
   background-color: #cccccc;
   background-size: cover;
   border-radius: 14px;
@@ -1045,6 +1063,10 @@ main.white .sec1 .container .bg-box .line .wrap.first .circle {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+main.white .sec1 .container .bg-box .line .wrap.first.mob {
+  display: none;
+  background: url(../img/sec1/line1-w-mob.svg) no-repeat;
+}
 main.white .sec1 .container .bg-box .line .wrap.second {
   position: absolute;
   rotate: 180deg;
@@ -1065,6 +1087,10 @@ main.white .sec1 .container .bg-box .line .wrap.second .circle {
   animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+main.white .sec1 .container .bg-box .line .wrap.second.mob {
+  display: none;
+  background: url(../img/sec1/line2-w-mob.svg) no-repeat;
 }
 main.white .sec1 .container .black-box {
   background-color: black;
@@ -1505,8 +1531,8 @@ main.white .sec6.mob .container {
   align-items: center;
 }
 main.white .sec6.mob .container .img-area {
-  width: 222px;
-  height: 460px;
+  width: 300px;
+  height: 600px;
   background-color: #cccccc;
   background-size: cover;
   border-radius: 14px;
@@ -1830,6 +1856,17 @@ main.white .sec8.pc .sec9 .black-bg {
   justify-content: center;
 }
 
+.sec4 .img-box.mob {
+  display: none;
+  aspect-ratio: 7/8 !important;
+}
+.sec4 .img-box.mob div.first {
+  background-image: url(../img/sec4/mockup1-mob.jpg);
+}
+.sec4 .img-box.mob div.second {
+  background-image: url(../img/sec4/mockup2-mob.jpg);
+}
+
 .sec5 {
   overflow: hidden;
 }
@@ -1853,8 +1890,8 @@ main.white .sec8.pc .sec9 .black-bg {
 }
 .sec6.mob figure .fake-img {
   position: relative;
-  width: 240px;
-  height: 466px;
+  width: 318px;
+  height: 618px;
   background-image: url(../img/sec6/device.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1874,7 +1911,7 @@ main.white .sec8.pc .sec9 .black-bg {
   content: "curtain";
   font-size: 0;
   display: block;
-  width: 240px;
+  width: 318px;
   height: calc(21vh - 8px);
   background-color: #0a0a0a;
 }
@@ -2348,6 +2385,22 @@ main.white .sec8.pc .sec9 .black-bg {
     margin-top: 150px !important;
     height: 10rem !important;
   }
+  .sec1 .wrap.first.pc {
+    display: none !important;
+  }
+  .sec1 .wrap.first.mob {
+    display: block !important;
+  }
+  .sec1 .wrap .circle {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .sec1 .wrap.second.pc {
+    display: none !important;
+  }
+  .sec1 .wrap.second.mob {
+    display: block !important;
+  }
   .sec2 {
     padding: 0px 20px 68px !important;
   }
@@ -2361,6 +2414,12 @@ main.white .sec8.pc .sec9 .black-bg {
   }
   .sec3 {
     height: 244px !important;
+  }
+  .sec4 .img-box.pc {
+    display: none;
+  }
+  .sec4 .img-box.mob {
+    display: block !important;
   }
   .sec10 .container a:not(a.middle) strong {
     display: none;
