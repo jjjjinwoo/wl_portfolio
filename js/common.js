@@ -139,16 +139,6 @@ $(document).ready(function () {
 
 // 섹션6: 모바일 스크롤 트리거
 
-gsap.to(".sec6.mob .img-area.first", {
-  scrollTrigger: {
-    trigger: ".sec6.mob",
-    start: "0% 50%",
-    end: "0% 50%",
-  },
-  opacity: 1,
-  transform: "translateY(0px)",
-});
-
 gsap.to(".sec6.mob .img-area.second", {
   scrollTrigger: {
     trigger: ".sec6.mob",

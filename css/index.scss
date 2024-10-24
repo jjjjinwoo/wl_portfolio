@@ -713,7 +713,7 @@ main.black {
   .sec6.mob {
     background-color: #0a0a0a;
     height: fit-content;
-    padding: 100px 0;
+    padding: 21vh 0;
     padding-bottom: 0;
     .container {
       display: flex;
@@ -857,7 +857,7 @@ main.black {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      row-gap: 100px;
+      row-gap: 40px;
       align-items: center;
       .img-area {
         width: 100%;
@@ -1571,7 +1571,7 @@ main.white {
   .sec6.mob {
     background-color: #f8f8f8;
     height: fit-content;
-    padding: 100px 0;
+    padding: 21vh 0;
     padding-bottom: 0;
     .container {
       display: flex;
@@ -1716,7 +1716,7 @@ main.white {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      row-gap: 100px;
+      row-gap: 40px;
       align-items: center;
       .img-area {
         width: 100%;
@@ -1923,6 +1923,55 @@ main.white {
   overflow: hidden;
 }
 
+.sec6.mob {
+  position: relative;
+  .device-container {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: calc(1504px + 21vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  figure {
+    position: sticky;
+    top: 0;
+    .fake-img {
+      position: relative;
+      width: 240px;
+      height: 466px;
+      background-image: url(../img/sec6/device.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .fake-img::before {
+      content: "MAIN PAGE";
+      color: white;
+      display: block;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      top: -36px;
+      font-size: 18px;
+      font-family: "Neutral Face Regular";
+    }
+  }
+  figure::before {
+    content: "curtain";
+    font-size: 0;
+    display: block;
+    width: 240px;
+    height: calc(21vh - 8px);
+    background-color: #0a0a0a;
+  }
+  .img-area.first {
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+  }
+}
+
 .sec7 {
   .items .item {
     width: calc(70vw - 2px) !important;
@@ -2061,7 +2110,7 @@ main.white {
       right: 5% !important;
     }
   }
-  .sec6 {
+  .sec6.pc {
     .container {
       column-gap: 70px !important;
     }
@@ -2123,6 +2172,12 @@ main.white {
   }
 }
 
+@media (max-width: 1099px) {
+  .sec1 {
+    margin-top: 60px;
+  }
+}
+
 // 태블릿 분기점  ---------------------------------------------------
 
 @media (max-width: 1024px) {
@@ -2167,8 +2222,10 @@ main.white {
       padding: 22px 54px !important;
     }
   }
+
   .sec3 {
     height: 400px !important;
+    pointer-events: none;
   }
   .sec4 {
     height: fit-content !important;
@@ -2192,7 +2249,7 @@ main.white {
         margin-left: 0 !important;
         width: 100% !important;
         height: 200px !important;
-        clip-path: none !important;
+        clip-path: polygon(0 0, 90% 0%, 100% 100%, 0% 100%) !important;
         .slider-content {
           height: 200px !important;
           .main-box {
@@ -2407,12 +2464,46 @@ main.white {
 // 모바일 분기점  ---------------------------------------------------
 
 @media (max-width: 480px) {
-  .sec2 {
-    .container .text-box {
-      flex-direction: column;
-      row-gap: 20px;
+  main.black .sec1 #main-title,
+  main.white .sec1 #main-title {
+    top: 120px;
+  }
+
+  main.black .sec1 .container,
+  main.white .sec1 .container {
+    padding: 50px 0 0;
+  }
+
+  .sec1 {
+    // height: 700px;
+    .bg-box .line {
+      top: 250px !important;
+    }
+    .bg-box .text {
+      height: 660px !important;
+    }
+    .black-box {
+      margin-top: 150px !important;
+      height: 10rem !important;
     }
   }
+
+  .sec2 {
+    padding: 0px 20px 68px !important;
+    .text-box {
+      flex-direction: column;
+      row-gap: 20px;
+      padding-top: 48px !important;
+    }
+    .shortcut {
+      margin-top: 48px !important;
+    }
+  }
+
+  .sec3 {
+    height: 244px !important;
+  }
+
   .sec10 {
     .container a:not(a.middle) strong {
       display: none;

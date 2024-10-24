@@ -678,7 +678,7 @@ main.black .sec6.mob {
   background-color: #0a0a0a;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 100px 0;
+  padding: 21vh 0;
   padding-bottom: 0;
 }
 main.black .sec6.mob .container {
@@ -808,7 +808,7 @@ main.black .sec7.mob .container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  row-gap: 100px;
+  row-gap: 40px;
   align-items: center;
 }
 main.black .sec7.mob .container .img-area {
@@ -1495,7 +1495,7 @@ main.white .sec6.mob {
   background-color: #f8f8f8;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 100px 0;
+  padding: 21vh 0;
   padding-bottom: 0;
 }
 main.white .sec6.mob .container {
@@ -1626,7 +1626,7 @@ main.white .sec7.mob .container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  row-gap: 100px;
+  row-gap: 40px;
   align-items: center;
 }
 main.white .sec7.mob .container .img-area {
@@ -1823,6 +1823,55 @@ main.white .sec8.pc .sec9 .black-bg {
   overflow: hidden;
 }
 
+.sec6.mob {
+  position: relative;
+}
+.sec6.mob .device-container {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: calc(1504px + 21vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sec6.mob figure {
+  position: sticky;
+  top: 0;
+}
+.sec6.mob figure .fake-img {
+  position: relative;
+  width: 240px;
+  height: 466px;
+  background-image: url(../img/sec6/device.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.sec6.mob figure .fake-img::before {
+  content: "MAIN PAGE";
+  color: white;
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: -36px;
+  font-size: 18px;
+  font-family: "Neutral Face Regular";
+}
+.sec6.mob figure::before {
+  content: "curtain";
+  font-size: 0;
+  display: block;
+  width: 240px;
+  height: calc(21vh - 8px);
+  background-color: #0a0a0a;
+}
+.sec6.mob .img-area.first {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+
 .sec7 .items .item {
   width: calc(70vw - 2px) !important;
   min-width: calc(70vw - 2px) !important;
@@ -1947,31 +1996,31 @@ main.white .sec8.pc .sec9 .black-bg {
   .sec5 .slider.sub1 {
     right: 5% !important;
   }
-  .sec6 .container {
+  .sec6.pc .container {
     -moz-column-gap: 70px !important;
          column-gap: 70px !important;
   }
-  .sec6 .mobile-box {
+  .sec6.pc .mobile-box {
     width: 280px !important;
   }
-  .sec6 .device-container figure::before {
+  .sec6.pc .device-container figure::before {
     width: 300px !important;
   }
-  .sec6 .device-container figure .fake-img {
+  .sec6.pc .device-container figure .fake-img {
     width: 300px !important;
     height: 588px !important;
     background-size: contain;
     background-repeat: no-repeat;
   }
-  .sec6 .device-container figure .fake-img {
+  .sec6.pc .device-container figure .fake-img {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .sec6 .device-container figure .fake-img::before {
+  .sec6.pc .device-container figure .fake-img::before {
     left: auto !important;
   }
-  .sec6 .bg-box img {
+  .sec6.pc .bg-box img {
     width: 90vw !important;
   }
   .sec8 .container {
@@ -1995,6 +2044,11 @@ main.white .sec8.pc .sec9 .black-bg {
   }
   .sec5 .slider.sub1 {
     right: 0% !important;
+  }
+}
+@media (max-width: 1099px) {
+  .sec1 {
+    margin-top: 60px;
   }
 }
 @media (max-width: 1024px) {
@@ -2039,6 +2093,7 @@ main.white .sec8.pc .sec9 .black-bg {
   }
   .sec3 {
     height: 400px !important;
+    pointer-events: none;
   }
   .sec4 {
     height: -moz-fit-content !important;
@@ -2065,8 +2120,8 @@ main.white .sec8.pc .sec9 .black-bg {
     margin-left: 0 !important;
     width: 100% !important;
     height: 200px !important;
-    -webkit-clip-path: none !important;
-            clip-path: none !important;
+    -webkit-clip-path: polygon(0 0, 90% 0%, 100% 100%, 0% 100%) !important;
+            clip-path: polygon(0 0, 90% 0%, 100% 100%, 0% 100%) !important;
   }
   .sec5 .container .visual-box .slider-content {
     height: 200px !important;
@@ -2264,9 +2319,37 @@ main.white .sec8.pc .sec9 .black-bg {
   }
 }
 @media (max-width: 480px) {
-  .sec2 .container .text-box {
+  main.black .sec1 #main-title,
+  main.white .sec1 #main-title {
+    top: 120px;
+  }
+  main.black .sec1 .container,
+  main.white .sec1 .container {
+    padding: 50px 0 0;
+  }
+  .sec1 .bg-box .line {
+    top: 250px !important;
+  }
+  .sec1 .bg-box .text {
+    height: 660px !important;
+  }
+  .sec1 .black-box {
+    margin-top: 150px !important;
+    height: 10rem !important;
+  }
+  .sec2 {
+    padding: 0px 20px 68px !important;
+  }
+  .sec2 .text-box {
     flex-direction: column;
     row-gap: 20px;
+    padding-top: 48px !important;
+  }
+  .sec2 .shortcut {
+    margin-top: 48px !important;
+  }
+  .sec3 {
+    height: 244px !important;
   }
   .sec10 .container a:not(a.middle) strong {
     display: none;
