@@ -32,7 +32,7 @@ gsap.to("#main-title", {
   scrollTrigger: {
     trigger: ".sec1",
     start: "0% 0%",
-    end: "100% 100%",
+    end: "100% 50%",
     scrub: 1,
   },
   top: "50vh",
@@ -40,15 +40,113 @@ gsap.to("#main-title", {
 
 // *섹션4: 이미지 슬라이드
 
-$(document).ready(function () {
-  $(".sec4 .img-box").slick({
-    autoplay: true,
-    pauseOnFocus: false,
-    pauseOnHover: false,
-    autoplaySpeed: 3000,
-    fade: true,
-  });
+var swiperSec4 = new Swiper(".sec4 .swiper-container", {
+  autoplay: {
+    delay: 2000,
+  },
+  speed: 2000,
+  loop: true,
+  effect: "fade",
 });
+
+// *섹션5: 슬라이더
+
+const sec5ColorIcon = document.querySelectorAll(".sec5 .main-box i");
+const sec5TextIcon = document.querySelectorAll(".sec5 .main-box span");
+const sec5VisualBox = document.querySelector(".sec5 .visual-box");
+
+var swiperSec5 = new Swiper(".sec5 .swiper-container", {
+  // allowTouchMove: false,
+  threshold:100,
+  loop: true,
+  effect: "fade",
+  controller: {
+    control: textSwiperSec5,
+  },
+  on: {
+    slideChangeTransitionStart: function () {
+      for (var i = 0; i < sec5ColorIcon.length; i++) {
+        sec5ColorIcon[i].style.display = "none";
+      }
+      for (var i = 0; i < sec5TextIcon.length; i++) {
+        sec5TextIcon[i].style.display = "none";
+      }
+      sec5VisualBox.style.clipPath =
+        "polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%)";
+      sec5VisualBox.style.transition = "0.5s";
+
+      setTimeout(() => {
+        sec5VisualBox.style.clipPath =
+          "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)";
+      }, 500);
+
+      setTimeout(() => {
+        sec5VisualBox.style.transition = "none";
+      }, 1000);
+    },
+    slideChangeTransitionEnd: function () {
+      setTimeout(() => {
+        for (var i = 0; i < sec5ColorIcon.length; i++) {
+          sec5ColorIcon[i].style.display = "block";
+        }
+        for (var i = 0; i < sec5TextIcon.length; i++) {
+          sec5TextIcon[i].style.display = "block";
+        }
+      }, 500);
+    },
+  },
+});
+
+var textSwiperSec5 = new Swiper(".sec5 .text-swiper", {
+  allowTouchMove: false,
+  loop: true,
+  effect: "fade",
+  autoplay: {
+    delay: 4000,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  controller: {
+    control: swiperSec5,
+  },
+  on: {
+    slideChangeTransitionStart: function () {
+      for (var i = 0; i < sec5ColorIcon.length; i++) {
+        sec5ColorIcon[i].style.display = "none";
+      }
+      for (var i = 0; i < sec5TextIcon.length; i++) {
+        sec5TextIcon[i].style.display = "none";
+      }
+      sec5VisualBox.style.clipPath =
+        "polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%)";
+      sec5VisualBox.style.transition = "0.5s";
+
+      setTimeout(() => {
+        sec5VisualBox.style.clipPath =
+          "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)";
+      }, 500);
+
+      setTimeout(() => {
+        sec5VisualBox.style.transition = "none";
+      }, 1000);
+    },
+    slideChangeTransitionEnd: function () {
+      setTimeout(() => {
+        for (var i = 0; i < sec5ColorIcon.length; i++) {
+          sec5ColorIcon[i].style.display = "block";
+        }
+        for (var i = 0; i < sec5TextIcon.length; i++) {
+          sec5TextIcon[i].style.display = "block";
+        }
+      }, 500);
+    },
+  },
+});
+
+swiperSec5.controller.control = textSwiperSec5;
+textSwiperSec5.controller.control = swiperSec5;
 
 // *섹션5: 영역 펼쳐지는 이벤트
 
@@ -75,66 +173,6 @@ ScrollTrigger.matchMedia({
       "column-gap": "10px",
     });
   },
-});
-
-// *섹션5: 슬라이더
-
-$(document).ready(function () {
-  $(".sec5 .slider.main").slick({
-    // draggable: false,
-    arrows: false,
-    fade: true,
-    pauseOnHover: false,
-    pauseOnFocus: true,
-    speed: 500,
-    asNavFor: ".sec5 .slider.sub1",
-  });
-
-  const sec5ColorIcon = document.querySelectorAll(".sec5 .main-box i");
-  const sec5TextIcon = document.querySelectorAll(".sec5 .main-box span");
-  const sec5VisualBox = document.querySelector(".sec5 .visual-box");
-
-  $(".sec5 .slider.main").on("beforeChange", function () {
-    for (var i = 0; i < sec5ColorIcon.length; i++) {
-      sec5ColorIcon[i].style.display = "none";
-    }
-    for (var i = 0; i < sec5TextIcon.length; i++) {
-      sec5TextIcon[i].style.display = "none";
-    }
-    sec5VisualBox.style.clipPath =
-      "polygon(0% 0%, -15% 0px, 0% 100%, 100% 100%, 0% 100%)";
-    sec5VisualBox.style.transition = "0.5s";
-
-    setTimeout(() => {
-      sec5VisualBox.style.clipPath =
-        "polygon(0% 0%, 85% 0, 100% 100%, 100% 100%, 0% 100%)";
-    }, 500);
-
-    setTimeout(() => {
-      sec5VisualBox.style.transition = "none";
-    }, 1000);
-  });
-  $(".sec5 .slider.main").on("afterChange", function () {
-    for (var i = 0; i < sec5ColorIcon.length; i++) {
-      sec5ColorIcon[i].style.display = "block";
-    }
-    for (var i = 0; i < sec5TextIcon.length; i++) {
-      sec5TextIcon[i].style.display = "block";
-    }
-  });
-
-  $(".sec5 .slider.sub1").slick({
-    draggable: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
-    pauseOnFocus: true,
-    fade: true,
-    speed: 1000,
-    arrows: false,
-    dots: true,
-    asNavFor: ".sec5 .slider.main",
-  });
 });
 
 // 섹션6: 모바일 스크롤 트리거
@@ -352,43 +390,37 @@ function createObjects(width, height) {
 
   var bodyData = [
     {
-      text: "ART",
+      text: "AI 기반 추천 엔진",
       color: black,
       strokeColor: white,
       textColor: "white",
     },
     {
-      text: "3D",
+      text: "모바일 최적화",
       color: black,
       strokeColor: white,
       textColor: "white",
     },
     {
-      text: "GRAPHIC",
+      text: "사용자 행동 분석",
       color: black,
       strokeColor: white,
       textColor: "white",
     },
     {
-      text: "PHOTO",
-      color: black,
-      strokeColor: white,
-      textColor: "white",
-    },
-    {
-      text: "VINTAGE",
+      text: "옴니채널 전략",
       color: white,
       strokeColor: black,
       textColor: "black",
     },
     {
-      text: "SHORT",
+      text: "개인화된 프로모션",
       color: white,
       strokeColor: black,
       textColor: "black",
     },
     {
-      text: "GOOD",
+      text: "맞춤형 쇼핑 경험",
       color: red,
       strokeColor: white,
       textColor: "white",
@@ -488,23 +520,11 @@ Events.on(render, "afterRender", renderText);
 Render.run(render); //렌더 실행
 var renner = Runner.create(); //러너 생성
 Runner.run(renner, engine); //생성한 업데이트와 물리 엔진 업데이트
-var fontSize;
-//폰트 사이즈 조절
-if (sectionWidth > 1024) {
-  fontSize = 38; // 반응형 폰트 크기 설정
-} else {
-  fontSize = 14; // 반응형 폰트 크기 설정
-}
+var fontSize = "clamp(14px, 2vw, 32px)";
 function getTextWidth(text) {
-  //폰트 사이즈 조절
-  if (sectionWidth > 1024) {
-    fontSize = 38; // 반응형 폰트 크기 설정
-  } else {
-    fontSize = 14; // 반응형 폰트 크기 설정
-  }
   var canvas = document.createElement("canvas");
   var context = canvas.getContext("2d");
-  context.font = `500 ${fontSize}px Pretendard Variable`;
+  context.font = `500 ${fontSize} Pretendard Variable`;
   return context.measureText(text).width;
 }
 
@@ -513,11 +533,6 @@ function renderText() {
   var context = render.context;
   var bodies = Composite.allBodies(engine.world);
   //폰트 사이즈 조절
-  if (sectionWidth > 1024) {
-    fontSize = 38; // 반응형 폰트 크기 설정
-  } else {
-    fontSize = 14; // 반응형 폰트 크기 설정
-  }
   var windowWidth = window.innerWidth;
 
   context.textAlign = "center";
@@ -534,7 +549,7 @@ function renderText() {
       context.rotate(body.angle);
 
       context.fillStyle = body.textColor || "white"; // 텍스트 색상
-      context.font = `500 ${fontSize}px Orbitron`; // 폰트 설정
+      context.font = `500 ${fontSize} Pretendard Variable`; // 폰트 설정
       context.fillText(body.text, 0, 0); // 텍스트 출력
       context.restore();
     }
@@ -599,3 +614,27 @@ if (sectionWidth >= 1024 && !resizeChkWindow02) {
 window.addEventListener("resize", () => handleResize(dropKeySection));
 
 createObjects(sectionWidth, sectionHeight);
+
+// 마우스 포인터 스타일 변경을 위한 마우스 오버 이벤트 핸들러 추가
+Events.on(mouseConstraint, "mousemove", function (event) {
+  // 마우스 위치에서 해당하는 바디가 있는지 확인
+  const bodiesUnderMouse = Matter.Query.point(objects, event.mouse.position);
+
+  if (bodiesUnderMouse.length > 0) {
+    // 바디가 있을 때 grab 커서 스타일 적용
+    dropKeySection.style.cursor = "grab";
+  } else {
+    // 마우스 포인터가 텍스트 바디 외부에 있을 때 기본 스타일로 되돌림
+    dropKeySection.style.cursor = "default";
+  }
+});
+
+// 아이템을 드래그하는 중 커서를 'grabbing'으로 변경
+Events.on(mouseConstraint, "startdrag", function () {
+  dropKeySection.style.cursor = "grabbing";
+});
+
+// 드래그가 끝나면 커서를 'default'로 되돌림
+Events.on(mouseConstraint, "enddrag", function () {
+  dropKeySection.style.cursor = "default";
+});

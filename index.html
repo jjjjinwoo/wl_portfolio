@@ -17,6 +17,12 @@
     <script src="./js/slick/slick.min.js"></script>
     <link rel="stylesheet" href="./css/slick/slick.css" />
     <link rel="stylesheet" href="./css/slick/slick-theme.css" />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- lenis -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <!-- matter -->
@@ -96,12 +102,12 @@
         </div>
         <div class="container">
           <figure class="img-box">
-            <img src="./img/sec1/mockup.png" alt="목업이미지" />
+            <img src="./img/img_work_view_neopharm_01.png" alt="목업이미지" />
           </figure>
           <figure class="bg-box">
             <div class="text">
               <img
-                src="./img/sec1/weaver-portflio.svg"
+                src="./img/base/base_calligraphy.svg"
                 alt="위버로프트 포트폴리오 손글씨"
               />
             </div>
@@ -127,19 +133,23 @@
         <div class="container">
           <div class="text-box">
             <p>
-              소아 경증환자의 응급실 과밀화를 방지하여 응급의 료자원의 효과적인
-              분배를 위해 선별 가이드라인을 안내합다. 소아 경증환자의 응급실
-              과밀화를 방지하 여 응급의료자원의 효과적인 분배를 위해 선별 가이
-              드라인을 안내합다.
+              피부 과학의 혁신, 네오팜샵이 최신 기술을 적용한 카페24 플랫폼으로
+              성공적으로 이전하여 더욱 진화된 모습으로 고객님을 맞이합니다! 20년
+              이상의 연구와 노하우를 바탕으로 한 네오팜의 대표 브랜드들을 이제
+              최적화된 UI/UX 디자인과 고급 보안 시스템이 적용된 환경에서
+              만나보세요.
             </p>
             <p>
-              소아 경증환자의 응급실 과밀화를 방지하여 응급의 료자원의 효과적인
-              분배를 위해 선별 가이드라인을 안내합다. 소아 경증환자의 응급실
-              과밀화를 방지하 여 응급의료자원의 효과적인 분배를 위해 선별 가이
-              드라인을 안내합다.
+              오늘의 특가, 앱 전용 특가 등 기존 카페24에서는 없는 기능의 구현과
+              사용자 행동 기반의맞춤형 상품 추천 엔진, 반응형 모바일 최적화,
+              고성능 검색 기능 등 첨단 기술을 활용한 서비스로 쇼핑 경험을 한
+              단계 높였습니다. 네오팜샵에서 최첨단 기술이 만든 원활한 쇼핑
+              경험과 함께 당신만의 맞춤 피부 케어 여정을 시작하세요.
             </p>
           </div>
-          <a href="#" class="shortcut">사이트 바로가기</a>
+          <a href="https://neopharmshop.co.kr/" class="shortcut"
+            >사이트 바로가기</a
+          >
         </div>
       </section>
       <section class="drop-key-section sec3">
@@ -147,21 +157,26 @@
         <div class="reverse-box"></div>
       </section>
       <section class="sec4">
-        <div class="img-box pc">
-          <div class="first"></div>
-          <div class="second"></div>
+        <div class="img-box pc swiper-container">
+          <div class="swiper-wrapper">
+            <div class="first swiper-slide">
+            </div>
+            <div class="second swiper-slide"></div>
+          </div>
         </div>
-        <div class="img-box mob">
-          <div class="first"></div>
-          <div class="second"></div>
+        <div class="img-box mob swiper-container">
+          <div class="swiper-wrapper">
+            <div class="first swiper-slide"></div>
+            <div class="second swiper-slide"></div>
+          </div>
         </div>
         <div class="reverse-box"></div>
       </section>
       <section class="sec5">
         <div class="container">
-          <div class="visual-box">
-            <div class="slider main">
-              <div class="slider-content color">
+          <div class="visual-box swiper-container">
+            <div class="slider main swiper-wrapper">
+              <div class="slider-content color swiper-slide">
                 <div class="main-box">
                   <i></i>
                   <i></i>
@@ -188,7 +203,7 @@
                   </div>
                 </div>
               </div>
-              <div class="slider-content text">
+              <div class="slider-content text swiper-slide">
                 <div class="main-box">
                   <span>가</span>
                   <span>나</span>
@@ -209,23 +224,29 @@
               </div>
             </div>
           </div>
-          <div class="slider sub1">
-            <div class="text-box">
-              <span class="category">COLOR</span>
-              <h3>NEOPHARM RED</h3>
-              <p>
-                소아 경증환자의 응급실 과밀화를 방지하여 응급의료자원의<br />
-                효과적인 분배를 위해 선별 가이드라인을 안내합다.
-              </p>
+          <div class="slider sub1 text-swiper">
+            <div class="swiper-wrapper">
+              <div class="text-box swiper-slide">
+                <span class="category">COLOR</span>
+                <h3>NEOPHARM RED</h3>
+                <p>
+                  "네오팜 레드"는 브랜드의 에너지와 신뢰를 상징합니다.
+                  소비자에게 강렬하면서도 따뜻한 인상을 주며, 품질과 안전성을
+                  강조해 네오팜의 아이덴티티를 직관적으로 표현합니다.
+                </p>
+              </div>
+              <div class="text-box swiper-slide">
+                <span class="category">FONT</span>
+                <h3>PRETENDARD</h3>
+                <p>
+                  깔끔하고 현대적인 디자인과 다양한 굵기 및 스타일을 제공해
+                  가독성이 높고, 웹사이트의 개성과 조화를 이루기 쉬우며,
+                  모바일을 포함한 다양한 화면에서도 안정적인 사용자 경험을
+                  지원합니다.
+                </p>
+              </div>
             </div>
-            <div class="text-box">
-              <span class="category">FONT</span>
-              <h3>PRETENDARD</h3>
-              <p>
-                환경 보호를 위해 일상에서 실천할 수 있는 간단한 방법들을<br />
-                안내하여 지속 가능한 생활을 독려합니다.
-              </p>
-            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
@@ -257,7 +278,7 @@
           </div>
         </div>
         <div class="bg-box">
-          <img src="./img/sec6/w-logo.svg" alt="w로고" />
+          <img src="./img/base/base_w.svg" alt="w로고" />
         </div>
       </section>
       <section class="sec6 mob">
@@ -302,42 +323,44 @@
       <section class="sec8 pc">
         <div class="container">
           <div class="solution first">
-            <span class="category">PROBLEM1</span>
+            <span class="category">KEY POINT 1</span>
             <div class="be-box">
               <p>
-                <strong>복잡한 레이아웃</strong>때문에<br />
-                정보에 접근하기가 어려움
+                모든 사용자에게
+                <strong>동일한 쇼핑 경험을 제공</strong>하여<br />
+                개인의 취향과 needs를 반영하지 못함
               </p>
             </div>
-            <img src="./img/sec8/arrow.svg" alt="arrow" />
+            <img src="./img/base/base_arrow_d.svg" alt="arrow" />
             <div class="af-box">
-              <p>친절한 인터페이스</p>
+              <p>맞춤형 쇼핑 경험 제공</p>
             </div>
           </div>
           <div class="solution second">
-            <span class="category">PROBLEM2</span>
+            <span class="category">KEY POINT 2</span>
             <div class="be-box">
               <p>
-                사용자 경험이 저해되어<br />
-                <strong>정보를 찾기 힘듬</strong>
+                복잡하고 일관성 없는 UI로 사용자들의<br />
+                <strong>정보 탐색과 구매 과정에 어려움</strong> 발생
               </p>
             </div>
-            <img src="./img/sec8/arrow.svg" alt="arrow" />
+            <img src="./img/base/base_arrow_d.svg" alt="arrow" />
             <div class="af-box">
-              <p>효율적인 마크업</p>
+              <p>사용자 친화적 UI/UX 구현</p>
             </div>
           </div>
           <div class="solution third">
-            <span class="category">PROBLEM3</span>
+            <span class="category">KEY POINT 3</span>
             <div class="be-box">
               <p>
-                <strong>어려운 디자인</strong>으로 인해<br />
-                필요한 정보를 쉽게 찾을 수 없음
+                모바일 기기에서의 <strong>접근성과 사용성이 떨어져</strong
+                ><br />
+                모바일 쇼핑 트렌드에 대응 미흡
               </p>
             </div>
-            <img src="./img/sec8/arrow.svg" alt="arrow" />
+            <img src="./img/base/base_arrow_d.svg" alt="arrow" />
             <div class="af-box">
-              <p>심플한 레이아웃</p>
+              <p>모바일 최적화 실현</p>
             </div>
           </div>
         </div>
@@ -345,49 +368,51 @@
       <section class="sec8 mob">
         <div class="container">
           <div class="solution first">
-            <span class="category">PROBLEM1</span>
+            <span class="category">KEY POINT 1</span>
             <div class="be-box">
               <p>
-                <strong>복잡한 레이아웃</strong>때문에<br />
-                정보에 접근하기가 어려움
+                모든 사용자에게
+                <strong>동일한 쇼핑 경험을 제공</strong>하여<br />
+                개인의 취향과 needs를 반영하지 못함
               </p>
             </div>
-            <img src="./img/sec8/arrow.svg" alt="arrow" />
+            <img src="./img/base/base_arrow_d.svg" alt="arrow" />
             <div class="af-box">
-              <p>친절한 인터페이스</p>
+              <p>맞춤형 쇼핑 경험 제공</p>
             </div>
           </div>
           <div class="solution second">
-            <span class="category">PROBLEM2</span>
+            <span class="category">KEY POINT 2</span>
             <div class="be-box">
               <p>
-                사용자 경험이 저해되어<br />
-                <strong>정보를 찾기 힘듬</strong>
+                복잡하고 일관성 없는 UI로 사용자들의<br />
+                <strong>정보 탐색과 구매 과정에 어려움</strong> 발생
               </p>
             </div>
-            <img src="./img/sec8/arrow.svg" alt="arrow" />
+            <img src="./img/base/base_arrow_d.svg" alt="arrow" />
             <div class="af-box">
-              <p>효율적인 마크업</p>
+              <p>사용자 친화적 UI/UX 구현</p>
             </div>
           </div>
           <div class="solution third">
-            <span class="category">PROBLEM3</span>
+            <span class="category">KEY POINT 3</span>
             <div class="be-box">
               <p>
-                <strong>어려운 디자인</strong>으로 인해<br />
-                필요한 정보를 쉽게 찾을 수 없음
+                모바일 기기에서의 <strong>접근성과 사용성이 떨어져</strong
+                ><br />
+                모바일 쇼핑 트렌드에 대응 미흡
               </p>
             </div>
-            <img src="./img/sec8/arrow.svg" alt="arrow" />
+            <img src="./img/base/base_arrow_d.svg" alt="arrow" />
             <div class="af-box">
-              <p>심플한 레이아웃</p>
+              <p>모바일 최적화 실현</p>
             </div>
           </div>
         </div>
       </section>
       <section class="sec9">
         <div class="container">
-          <img src="./img/sec9/3d임시.png" alt="3d임시" />
+          <img src="./img/base/base_w_3d.png" alt="3d임시" />
           <h3>FIND A AWAY</h3>
           <p>불가능한 것은 없습니다. 단지 방법을 찾지 못한 것일 뿐입니다.</p>
         </div>

@@ -9,15 +9,45 @@
   src: local("Neutral Face Regular"),
     url("../font/NeutralFace.woff") format("woff");
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+// 스와이퍼 -----------------------------------------------------
+
+.swiper-pagination {
+  position: relative !important;
+  mix-blend-mode: difference;
+  top: 28px !important;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  background-color: transparent !important;
+  margin: 0 !important;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet::before {
+  content: "";
+  background-color: white;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
 
 // 색상 변수  ---------------------------------------------------
 
 $first-color: white;
 $second-color: black;
 $primary-color: #e00719;
-$secondary-color: #fdb9e1;
-$sub-color-1: grey;
-$sub-color-2: grey;
+$secondary-color: #01abea;
+$sub-color-1: #f7f8fa;
+$sub-color-2: #ffffff;
 
 // 글꼴 변수  ---------------------------------------------------
 
@@ -228,7 +258,7 @@ main.black {
             position: absolute;
             width: 1383px;
             height: 1172px;
-            background: url(../img/sec1/line1.svg) no-repeat;
+            background: url(../img/base/base_line1.svg) no-repeat;
             mix-blend-mode: difference;
             .circle {
               position: absolute;
@@ -248,7 +278,7 @@ main.black {
           }
           .wrap.first.mob {
             display: none;
-            background: url(../img/sec1/line1-mob.svg) no-repeat;
+            background: url(../img/base/base_line1_mob.svg) no-repeat;
           }
           .wrap.second {
             position: absolute;
@@ -256,7 +286,7 @@ main.black {
             top: -64px;
             width: 1246px;
             height: 1316px;
-            background: url(../img/sec1/line2.svg) no-repeat;
+            background: url(../img/base/base_line2.svg) no-repeat;
             mix-blend-mode: difference;
             .circle {
               position: absolute;
@@ -276,7 +306,7 @@ main.black {
           }
           .wrap.second.mob {
             display: none;
-            background: url(../img/sec1/line2-mob.svg) no-repeat;
+            background: url(../img/base/base_line1_mob.svg) no-repeat;
           }
         }
       }
@@ -306,7 +336,7 @@ main.black {
         column-gap: 66px;
         p {
           font-size: 18px;
-          font-weight: 300;
+          font-weight: 400;
           max-width: 356px;
           line-height: 2;
         }
@@ -362,10 +392,10 @@ main.black {
         background-position-x: center;
       }
       div.first {
-        background-image: url(../img/sec4/mockup1.jpg);
+        background-image: url(../img/img_work_view_neopharm_02.jpg);
       }
       div.second {
-        background-image: url(../img/sec4/mockup2.jpg);
+        background-image: url(../img/img_work_view_neopharm_03.jpg);
       }
     }
     .reverse-box {
@@ -375,10 +405,10 @@ main.black {
     .img-box.mob {
       display: none;
       div.first {
-        background-image: url(../img/sec4/mockup1-mob.jpg);
+        background-image: url(../img/img_work_view_neopharm_02_mob.jpg);
       }
       div.second {
-        background-image: url(../img/sec4/mockup2-mob.jpg);
+        background-image: url(../img/img_work_view_neopharm_03_mob.jpg);
       }
     }
   }
@@ -398,7 +428,7 @@ main.black {
       .visual-box {
         margin-left: 100px;
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         height: 702px;
         width: 58%;
         background-color: $first-color;
@@ -554,7 +584,7 @@ main.black {
           font-size: 18px;
           text-align: center;
           color: #858585;
-          font-weight: 300;
+          font-weight: 400;
           line-height: 2;
         }
       }
@@ -579,16 +609,18 @@ main.black {
           position: relative;
           width: 401px;
           height: 779px;
-          background-image: url(../img/sec6/device.png);
+          background-image: url(../img/base/base_device1.png);
         }
         .fake-img::before {
-          content: "MAIN PAGE";
+          content: "Main";
           font-size: 28px;
           text-align: center;
           color: white;
           position: absolute;
           top: -58px;
-          left: 128px;
+          left: 166px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
         }
         .fake-img::after {
           content: "circle";
@@ -596,7 +628,7 @@ main.black {
           display: block;
           position: absolute;
           top: -80px;
-          left: 106px;
+          left: 142px;
           width: 66px;
           height: 66px;
           border: 1px solid white;
@@ -657,9 +689,11 @@ main.black {
       position: relative;
       top: -58px;
       color: white;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
     }
     .mobile-box.first::before {
-      content: "SUB PAGE 1";
+      content: "Brand Story 1";
       font-size: 28px;
       display: block;
       text-align: center;
@@ -668,7 +702,7 @@ main.black {
       color: white;
     }
     .mobile-box.third::before {
-      content: "SUB PAGE 2";
+      content: "Brand Story 2";
       font-size: 28px;
       display: block;
       text-align: center;
@@ -682,7 +716,7 @@ main.black {
       display: block;
       position: absolute;
       top: -80px;
-      left: 88px;
+      left: 68px;
       width: 66px;
       height: 66px;
       border: 1px solid white;
@@ -693,20 +727,20 @@ main.black {
       position: relative;
       top: 30vh;
       height: 1100px;
-      background-image: url(../img/sec6/sub-page-1.png);
+      background-image: url(../img/img_work_view_neopharm_05.png);
       .detail {
         top: calc(1100px + 60vh);
       }
     }
     .mobile-box.second {
       height: 236vh;
-      background-image: url(../img/sec6/main-page.png);
+      background-image: url(../img/img_work_view_neopharm_04.png);
     }
     .mobile-box.third {
       position: relative;
       top: 140vh;
       height: 746px;
-      background-image: url(../img/sec6/sub-page-2.png);
+      background-image: url(../img/img_work_view_neopharm_06.png);
       .detail {
         top: calc(-746px - 20vh);
       }
@@ -755,28 +789,28 @@ main.black {
         width: 100%;
         position: relative;
         top: -36px;
-        font-size: 18px;
-        font-family: "Neutral Face Regular";
+        font-size: 20px;
+        font-weight: 500;
       }
       .img-area.first {
-        background-image: url(../img/sec6/main-page.png);
+        background-image: url(../img/img_work_view_neopharm_04.png);
         height: 1500px;
       }
       .img-area.first::before {
-        content: "MAIN PAGE";
+        content: "Main";
       }
       .img-area.second {
-        background-image: url(../img/sec6/sub-page-1.png);
+        background-image: url(../img/img_work_view_neopharm_05.png);
       }
       .img-area.second::before {
-        content: "SUB PAGE 1";
+        content: "Brand Story 1";
       }
       .img-area.third {
-        background-image: url(../img/sec6/sub-page-2.png);
+        background-image: url(../img/img_work_view_neopharm_06.png);
         height: 700px;
       }
       .img-area.third::before {
-        content: "SUB PAGE 2";
+        content: "Brand Story 2";
       }
     }
   }
@@ -820,31 +854,31 @@ main.black {
             font-size: 0;
             position: absolute;
             width: 1417px;
-            left: -1px;
-            top: -1px;
+            left: -11px;
+            top: -9px;
             height: 797px;
-            background-image: url(../img/sec7/device.png);
+            background-image: url(../img/base/base_device2.png);
             background-size: cover;
           }
         }
         .item:nth-child(1) {
           div {
-            background-image: url(../img/sec7/page-1.png);
+            background-image: url(../img/img_work_view_neopharm_07.png);
           }
         }
         .item:nth-child(2) {
           div {
-            background-image: url(../img/sec7/page-3.png);
+            background-image: url(../img/img_work_view_neopharm_08.png);
           }
         }
         .item:nth-child(3) {
           div {
-            background-image: url(../img/sec7/page-2.png);
+            background-image: url(../img/img_work_view_neopharm_09.png);
           }
         }
         .item:nth-child(4) {
           div {
-            background-image: url(../img/sec7/page-4.png);
+            background-image: url(../img/img_work_view_neopharm_10.png);
           }
         }
       }
@@ -888,16 +922,16 @@ main.black {
         transform: translateY(50px);
       }
       .img-area.first {
-        background-image: url(../img/sec7/page-1.png);
+        background-image: url(../img/img_work_view_neopharm_07.png);
       }
       .img-area.second {
-        background-image: url(../img/sec7/page-2.png);
+        background-image: url(../img/img_work_view_neopharm_08.png);
       }
       .img-area.third {
-        background-image: url(../img/sec7/page-3.png);
+        background-image: url(../img/img_work_view_neopharm_09.png);
       }
       .img-area.fourth {
-        background-image: url(../img/sec7/page-4.png);
+        background-image: url(../img/img_work_view_neopharm_10.png);
       }
     }
   }
@@ -933,7 +967,7 @@ main.black {
             font-size: 22px;
             color: white;
             text-align: center;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 34px;
           }
         }
@@ -945,7 +979,7 @@ main.black {
           display: block;
           position: absolute;
           z-index: -1;
-          background-image: url(../img/sec8/be-box.svg);
+          background-image: url(../img//base/base_be_box.svg);
         }
         .af-box {
           position: relative;
@@ -972,7 +1006,7 @@ main.black {
           display: block;
           position: absolute;
           z-index: -1;
-          background-image: url(../img/sec8/af-box.svg);
+          background-image: url(../img//base/base_af_box.svg);
         }
       }
       .solution.second {
@@ -981,10 +1015,10 @@ main.black {
           background-color: #cccccc;
         }
         .be-box::before {
-          background-image: url(../img/sec8/be-box-m.svg);
+          background-image: url(../img/base/base_be_box_m.svg);
         }
         .af-box::before {
-          background-image: url(../img/sec8/af-box-m.svg);
+          background-image: url(../img/base/base_af_box_m.svg);
         }
       }
     }
@@ -1104,7 +1138,7 @@ main.white {
             position: absolute;
             width: 1383px;
             height: 1172px;
-            background: url(../img/sec1/line1-w.svg) no-repeat;
+            background: url(../img/base/base_line1_w.svg) no-repeat;
             .circle {
               position: absolute;
               width: 30px;
@@ -1123,7 +1157,7 @@ main.white {
           }
           .wrap.first.mob {
             display: none;
-            background: url(../img/sec1/line1-w-mob.svg) no-repeat;
+            background: url(../img/base/base_line1_w_mob.svg) no-repeat;
           }
           .wrap.second {
             position: absolute;
@@ -1131,7 +1165,7 @@ main.white {
             top: -64px;
             width: 1246px;
             height: 1316px;
-            background: url(../img/sec1/line2-w.svg) no-repeat;
+            background: url(../img/base/base_line2_w.svg) no-repeat;
             .circle {
               position: absolute;
               width: 20px;
@@ -1150,7 +1184,7 @@ main.white {
           }
           .wrap.second.mob {
             display: none;
-            background: url(../img/sec1/line2-w-mob.svg) no-repeat;
+            background: url(../img/base/base_line2_w_mob.svg) no-repeat;
           }
         }
       }
@@ -1180,7 +1214,7 @@ main.white {
         column-gap: 66px;
         p {
           font-size: 18px;
-          font-weight: 300;
+          font-weight: 400;
           max-width: 356px;
           line-height: 2;
         }
@@ -1236,10 +1270,10 @@ main.white {
         background-position-x: center;
       }
       div.first {
-        background-image: url(../img/sec4/mockup1.jpg);
+        background-image: url(../img/img_work_view_neopharm_02.jpg);
       }
       div.second {
-        background-image: url(../img/sec4/mockup2.jpg);
+        background-image: url(../img/img_work_view_neopharm_03.jpg);
       }
     }
     .reverse-box {
@@ -1263,7 +1297,7 @@ main.white {
       .visual-box {
         margin-left: 100px;
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         height: 702px;
         width: 58%;
         background-color: $second-color;
@@ -1412,14 +1446,14 @@ main.white {
           font-weight: normal;
           font-size: 40px;
           font-weight: 500;
-          color: black;
+          color: rgb(255, 255, 255);
           mix-blend-mode: difference;
         }
         p {
           font-size: 18px;
           text-align: center;
           color: #858585;
-          font-weight: 300;
+          font-weight: 400;
           line-height: 2;
         }
       }
@@ -1444,17 +1478,19 @@ main.white {
           position: relative;
           width: 401px;
           height: 779px;
-          background-image: url(../img/sec6/device-w.png);
+          background-image: url(../img/base/base_device1_w.png);
         }
         .fake-img::before {
-          content: "MAIN PAGE";
+          content: "Main";
           font-size: 28px;
           font-weight: 500;
           text-align: center;
           color: black;
           position: absolute;
           top: -58px;
-          left: 128px;
+          left: 166px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
         }
         .fake-img::after {
           content: "circle";
@@ -1462,7 +1498,7 @@ main.white {
           display: block;
           position: absolute;
           top: -80px;
-          left: 106px;
+          left: 142px;
           width: 66px;
           height: 66px;
           border: 1px solid black;
@@ -1525,9 +1561,11 @@ main.white {
       position: relative;
       top: -58px;
       color: black;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
     }
     .mobile-box.first::before {
-      content: "SUB PAGE 1";
+      content: "Brand Story 1";
       font-size: 28px;
       display: block;
       text-align: center;
@@ -1535,7 +1573,7 @@ main.white {
       top: -58px;
     }
     .mobile-box.third::before {
-      content: "SUB PAGE 2";
+      content: "Brand Story 2";
       font-size: 28px;
       display: block;
       text-align: center;
@@ -1548,7 +1586,7 @@ main.white {
       display: block;
       position: absolute;
       top: -80px;
-      left: 88px;
+      left: 68px;
       width: 66px;
       height: 66px;
       border: 1px solid black;
@@ -1559,20 +1597,20 @@ main.white {
       position: relative;
       top: 30vh;
       height: 1100px;
-      background-image: url(../img/sec6/sub-page-1.png);
+      background-image: url(../img/img_work_view_neopharm_05.png);
       .detail {
         top: calc(1100px + 60vh);
       }
     }
     .mobile-box.second {
       height: 236vh;
-      background-image: url(../img/sec6/main-page.png);
+      background-image: url(../img/img_work_view_neopharm_04.png);
     }
     .mobile-box.third {
       position: relative;
       top: 140vh;
       height: 746px;
-      background-image: url(../img/sec6/sub-page-2.png);
+      background-image: url(../img/img_work_view_neopharm_06.png);
       .detail {
         top: calc(-746px - 20vh);
       }
@@ -1624,32 +1662,32 @@ main.white {
         width: 100%;
         position: relative;
         top: -36px;
-        font-size: 18px;
-        font-family: "Neutral Face Regular";
+        font-size: 20px;
+        font-weight: 500;
       }
       .img-area.first {
-        background-image: url(../img/sec6/main-page.png);
+        background-image: url(../img/img_work_view_neopharm_04.png);
         height: 1500px;
       }
       .img-area.first::before {
-        content: "MAIN PAGE";
+        content: "Main";
       }
       .img-area.second {
-        background-image: url(../img/sec6/sub-page-1.png);
+        background-image: url(../img/img_work_view_neopharm_05.png);
       }
       .img-area.second::before {
-        content: "SUB PAGE 1";
+        content: "Brand Story 1";
       }
       .img-area.third {
-        background-image: url(../img/sec6/sub-page-2.png);
+        background-image: url(../img/img_work_view_neopharm_06.png);
         height: 700px;
       }
       .img-area.third::before {
-        content: "SUB PAGE 2";
+        content: "Brand Story 2";
       }
     }
     figure .fake-img {
-      background-image: url(../img/sec6/device-w.png);
+      background-image: url(../img/base/base_device1_w.png);
     }
     figure .fake-img::before {
       color: black;
@@ -1698,31 +1736,31 @@ main.white {
             font-size: 0;
             position: absolute;
             width: 1417px;
-            left: -1px;
-            top: -1px;
+            left: -11px;
+            top: -9px;
             height: 797px;
-            background-image: url(../img/sec7/device.png);
+            background-image: url(../img/base/base_device2.png);
             background-size: cover;
           }
         }
         .item:nth-child(1) {
           div {
-            background-image: url(../img/sec7/page-1.png);
+            background-image: url(../img/img_work_view_neopharm_07.png);
           }
         }
         .item:nth-child(2) {
           div {
-            background-image: url(../img/sec7/page-3.png);
+            background-image: url(../img/img_work_view_neopharm_08.png);
           }
         }
         .item:nth-child(3) {
           div {
-            background-image: url(../img/sec7/page-2.png);
+            background-image: url(../img/img_work_view_neopharm_09.png);
           }
         }
         .item:nth-child(4) {
           div {
-            background-image: url(../img/sec7/page-4.png);
+            background-image: url(../img/img_work_view_neopharm_10.png);
           }
         }
       }
@@ -1767,16 +1805,16 @@ main.white {
         filter: drop-shadow(0px 40px 20px rgba(0, 0, 0, 0.2));
       }
       .img-area.first {
-        background-image: url(../img/sec7/page-1.png);
+        background-image: url(../img/img_work_view_neopharm_07.png);
       }
       .img-area.second {
-        background-image: url(../img/sec7/page-2.png);
+        background-image: url(../img/img_work_view_neopharm_08.png);
       }
       .img-area.third {
-        background-image: url(../img/sec7/page-3.png);
+        background-image: url(../img/img_work_view_neopharm_09.png);
       }
       .img-area.fourth {
-        background-image: url(../img/sec7/page-4.png);
+        background-image: url(../img/img_work_view_neopharm_10.png);
       }
     }
   }
@@ -1817,7 +1855,7 @@ main.white {
             font-size: 22px;
             color: black;
             text-align: center;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 34px;
           }
         }
@@ -1830,7 +1868,7 @@ main.white {
           position: absolute;
           z-index: -1;
           opacity: 0.3;
-          background-image: url(../img/sec8/be-box.svg);
+          background-image: url(../img/base/base_be_box.svg);
         }
         .af-box {
           position: relative;
@@ -1857,7 +1895,7 @@ main.white {
           display: block;
           position: absolute;
           z-index: -1;
-          background-image: url(../img/sec8/af-box-w.svg);
+          background-image: url(../img/base/base_af_box_w.svg);
         }
       }
       .solution.second {
@@ -1866,10 +1904,10 @@ main.white {
           background-color: #686868;
         }
         .be-box::before {
-          background-image: url(../img/sec8/be-box-m.svg);
+          background-image: url(../img/base/base_be_box_m.svg);
         }
         .af-box::before {
-          background-image: url(../img/sec8/af-box-w-m.svg);
+          background-image: url(../img/base/base_af_box_w_m.svg);
         }
       }
     }
@@ -1898,7 +1936,6 @@ main.white {
       position: relative;
       width: 100%;
       height: 900px;
-      background-image: url(../img/sec9/mockup.png);
       background-size: cover;
       .container {
         position: relative;
@@ -1960,15 +1997,52 @@ main.white {
   display: none;
   aspect-ratio: 7 / 8 !important;
   div.first {
-    background-image: url(../img/sec4/mockup1-mob.jpg);
+    background-image: url(../img/img_work_view_neopharm_02_mob.jpg);
   }
   div.second {
-    background-image: url(../img/sec4/mockup2-mob.jpg);
+    background-image: url(../img/img_work_view_neopharm_03_mob.jpg);
   }
 }
 
 .sec5 {
   overflow: hidden;
+  .main-box {
+    i:nth-child(3) {
+      border: 1px solid rgb(205, 205, 205);
+    }
+  }
+  .sub-box {
+    span.third::before {
+      border: 1px solid rgb(205, 205, 205);
+    }
+    span.fourth::before {
+      border: 1px solid rgb(205, 205, 205);
+    }
+  }
+  .slider.main .slider-content {
+    background-color: white;
+  }
+  .slider.sub1 .text-box {
+    background-color: black;
+  }
+  .slider.sub1 .text-box p {
+    word-break: keep-all;
+  }
+}
+
+.white .sec5 {
+  .slider.main .slider-content {
+    background-color: black;
+  }
+  .slider.sub1 .text-box {
+    background-color: white;
+  }
+}
+
+.sec6 {
+  .detail {
+    display: none;
+  }
 }
 
 .sec6.mob {
@@ -1990,20 +2064,20 @@ main.white {
       position: relative;
       width: 318px;
       height: 618px;
-      background-image: url(../img/sec6/device.png);
+      background-image: url(../img/base/base_device1.png);
       background-size: contain;
       background-repeat: no-repeat;
     }
     .fake-img::before {
-      content: "MAIN PAGE";
+      content: "Main";
       color: white;
       display: block;
       text-align: center;
       width: 100%;
       position: relative;
       top: -36px;
-      font-size: 18px;
-      font-family: "Neutral Face Regular";
+      font-size: 20px;
+      font-weight: 500;
     }
   }
   figure::before {
@@ -2029,11 +2103,22 @@ main.white {
     width: 100% !important;
     aspect-ratio: 16 / 8.9 !important;
     height: auto !important;
+    border-radius: 20px !important;
   }
   .items .item div::before {
-    width: 70vw !important;
+    width: calc(70vw + 19px) !important;
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
+  }
+}
+
+.sec8 {
+  .solution .be-box p {
+    font-size: 20px !important;
+  }
+  .solution .af-box p {
+    font-size: 28px !important;
+    font-weight: 600 !important;
   }
 }
 
@@ -2041,7 +2126,7 @@ main.white {
   position: relative;
   width: 100%;
   height: 900px;
-  background-image: url(../img/sec9/mockup.png);
+  background-image: url(../img/img_work_view_neopharm_11.png);
   background-size: cover;
   .container {
     position: relative;
@@ -2095,7 +2180,7 @@ main.white {
       display: block;
       width: 40px;
       height: 20px;
-      background-image: url(../img/footer/arrow-l.svg);
+      background-image: url(../img/base/base_arrow_l.svg);
       margin-right: 30px;
     }
     a.right::after {
@@ -2104,7 +2189,7 @@ main.white {
       display: block;
       width: 40px;
       height: 20px;
-      background-image: url(../img/footer/arrow-r.svg);
+      background-image: url(../img/base/base_arrow_r.svg);
       margin-left: 30px;
     }
     a.middle {
@@ -2112,7 +2197,7 @@ main.white {
       width: 80px;
       height: 80px;
       background-size: cover;
-      background-image: url(../img/footer/menu-btn.png);
+      background-image: url(../img/base/base_menu.png);
       transition: 0.3s;
     }
     a.middle:hover {
@@ -2165,6 +2250,9 @@ main.white {
     .mobile-box {
       width: 280px !important;
     }
+    .mobile-box::after {
+      left: 30px !important;
+    }
     .device-container figure::before {
       width: 300px !important;
     }
@@ -2173,11 +2261,12 @@ main.white {
       height: 588px !important;
       background-size: contain;
       background-repeat: no-repeat;
-    }
-    .device-container figure .fake-img {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    .device-container figure .fake-img::after {
+      left: 96px !important;
     }
     .device-container figure .fake-img::before {
       left: auto !important;
@@ -2229,6 +2318,17 @@ main.white {
 // 태블릿 분기점  ---------------------------------------------------
 
 @media (max-width: 1024px) {
+  .swiper-pagination {
+    top: 16px !important;
+  }
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+    background-color: transparent !important;
+    margin: 0 !important;
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+
   .category {
     font-size: 14px !important;
     padding: 6px 14px !important;
@@ -2324,7 +2424,9 @@ main.white {
       }
     }
     .slider.sub1 {
+      width: 100% !important;
       position: relative !important;
+      max-width: 400px;
       .text-box h3 {
         font-size: 28px !important;
       }
@@ -2353,7 +2455,7 @@ main.white {
       .solution .be-box::before {
         height: 190px !important;
         width: 282px !important;
-        background-image: url(../img/sec8/be-box-mob.svg) !important;
+        background-image: url(../img/base/base_be_box_mob.svg) !important;
         opacity: 0.3;
       }
       .solution .be-box {
@@ -2364,7 +2466,7 @@ main.white {
       .solution .af-box::before {
         height: 190px !important;
         width: 282px !important;
-        background-image: url(../img/sec8/af-box-mob.svg) !important;
+        background-image: url(../img/base/base_af_box_mob.svg) !important;
       }
       .solution .af-box {
         height: 190px !important;
@@ -2377,7 +2479,7 @@ main.white {
         line-height: 28px !important;
       }
       .solution .af-box p {
-        font-size: 24px !important;
+        font-size: 22px !important;
       }
       .solution img {
         margin: 20px 0;
@@ -2387,10 +2489,10 @@ main.white {
         margin-bottom: 0 !important;
       }
       .solution.second .be-box::before {
-        background-image: url(../img/sec8/be-box-m-mob.svg) !important;
+        background-image: url(../img/base/base_be_box_m_mob.svg) !important;
       }
       .solution.second .af-box::before {
-        background-image: url(../img/sec8/af-box-m-mob.svg) !important;
+        background-image: url(../img/base/base_af_box_m_mob.svg) !important;
       }
       .solution {
         transform: rotateY(90deg);
@@ -2467,16 +2569,16 @@ main.white {
           background-size: cover;
         }
         .solution .be-box::before {
-          background-image: url(../img/sec8/be-box-w-mob.svg) !important;
+          background-image: url(../img/base/base_be_box_w_mob.svg) !important;
         }
         .solution .af-box::before {
-          background-image: url(../img/sec8/af-box-w-mob.svg) !important;
+          background-image: url(../img/base/base_af_box_w_mob.svg) !important;
         }
         .solution.second .be-box::before {
-          background-image: url(../img/sec8/be-box-w-m-mob.svg) !important;
+          background-image: url(../img/base/base_be_box_w_m_mob.svg) !important;
         }
         .solution.second .af-box::before {
-          background-image: url(../img/sec8/af-box-w-m-mob.svg) !important;
+          background-image: url(../img/base/base_af_box_w_m_mob.svg) !important;
         }
       }
     }
@@ -2568,12 +2670,19 @@ main.white {
     height: 244px !important;
   }
 
-  .sec4 .img-box.pc {
-    display: none;
+  .sec4 {
+    .img-box.pc {
+      display: none;
+    }
+    .img-box.mob {
+      display: block !important;
+    }
   }
 
-  .sec4 .img-box.mob {
-    display: block !important;
+  main.white .sec5 {
+    .slider.sub1 {
+      max-width: none;
+    }
   }
 
   .sec10 {

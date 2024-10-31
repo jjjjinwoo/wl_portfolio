@@ -1,12 +1,43 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
 @import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @font-face {
   font-family: "Neutral Face Regular";
   font-style: normal;
   font-weight: normal;
   src: local("Neutral Face Regular"), url("../font/NeutralFace.woff") format("woff");
 }
+.swiper-pagination {
+  position: relative !important;
+  mix-blend-mode: difference;
+  top: 28px !important;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  background-color: transparent !important;
+  margin: 0 !important;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet::before {
+  content: "";
+  background-color: white;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
 body {
   font-family: "Pretendard Variable", sans-serif;
   overflow-x: hidden;
@@ -214,7 +245,7 @@ main.black .sec1 .container .bg-box .line .wrap.first {
   position: absolute;
   width: 1383px;
   height: 1172px;
-  background: url(../img/sec1/line1.svg) no-repeat;
+  background: url(../img/base/base_line1.svg) no-repeat;
   mix-blend-mode: difference;
 }
 main.black .sec1 .container .bg-box .line .wrap.first .circle {
@@ -232,7 +263,7 @@ main.black .sec1 .container .bg-box .line .wrap.first .circle {
 }
 main.black .sec1 .container .bg-box .line .wrap.first.mob {
   display: none;
-  background: url(../img/sec1/line1-mob.svg) no-repeat;
+  background: url(../img/base/base_line1_mob.svg) no-repeat;
 }
 main.black .sec1 .container .bg-box .line .wrap.second {
   position: absolute;
@@ -240,7 +271,7 @@ main.black .sec1 .container .bg-box .line .wrap.second {
   top: -64px;
   width: 1246px;
   height: 1316px;
-  background: url(../img/sec1/line2.svg) no-repeat;
+  background: url(../img/base/base_line2.svg) no-repeat;
   mix-blend-mode: difference;
 }
 main.black .sec1 .container .bg-box .line .wrap.second .circle {
@@ -258,7 +289,7 @@ main.black .sec1 .container .bg-box .line .wrap.second .circle {
 }
 main.black .sec1 .container .bg-box .line .wrap.second.mob {
   display: none;
-  background: url(../img/sec1/line2-mob.svg) no-repeat;
+  background: url(../img/base/base_line1_mob.svg) no-repeat;
 }
 main.black .sec1 .container .black-box {
   background-color: white;
@@ -285,7 +316,7 @@ main.black .sec2 .container .text-box {
 }
 main.black .sec2 .container .text-box p {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   max-width: 356px;
   line-height: 2;
 }
@@ -334,10 +365,10 @@ main.black .sec4 .img-box div {
   background-position-x: center;
 }
 main.black .sec4 .img-box div.first {
-  background-image: url(../img/sec4/mockup1.jpg);
+  background-image: url(../img/img_work_view_neopharm_02.jpg);
 }
 main.black .sec4 .img-box div.second {
-  background-image: url(../img/sec4/mockup2.jpg);
+  background-image: url(../img/img_work_view_neopharm_03.jpg);
 }
 main.black .sec4 .reverse-box {
   opacity: 1;
@@ -347,10 +378,10 @@ main.black .sec4 .img-box.mob {
   display: none;
 }
 main.black .sec4 .img-box.mob div.first {
-  background-image: url(../img/sec4/mockup1-mob.jpg);
+  background-image: url(../img/img_work_view_neopharm_02_mob.jpg);
 }
 main.black .sec4 .img-box.mob div.second {
-  background-image: url(../img/sec4/mockup2-mob.jpg);
+  background-image: url(../img/img_work_view_neopharm_03_mob.jpg);
 }
 main.black .sec5 {
   height: 1012px;
@@ -367,7 +398,7 @@ main.black .sec5 .container {
 main.black .sec5 .container .visual-box {
   margin-left: 100px;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   height: 702px;
   width: 58%;
   background-color: white;
@@ -412,11 +443,11 @@ main.black .sec5 .container .visual-box .slider.main .slider-content .main-box i
   background-color: #e00719;
 }
 main.black .sec5 .container .visual-box .slider.main .slider-content .main-box i:nth-child(2) {
-  background-color: #fdb9e1;
+  background-color: #01abea;
   animation-delay: 0.1s;
 }
 main.black .sec5 .container .visual-box .slider.main .slider-content .main-box i:nth-child(3) {
-  background-color: grey;
+  background-color: #f7f8fa;
   animation-delay: 0.2s;
 }
 main.black .sec5 .container .visual-box .slider.main .slider-content .main-box span {
@@ -476,13 +507,13 @@ main.black .sec5 .container .visual-box .slider.main .slider-content .sub-box di
   background-color: #e00719;
 }
 main.black .sec5 .container .visual-box .slider.main .slider-content .sub-box div span.second::before {
-  background-color: #fdb9e1;
+  background-color: #01abea;
 }
 main.black .sec5 .container .visual-box .slider.main .slider-content .sub-box div span.third::before {
-  background-color: grey;
+  background-color: #f7f8fa;
 }
 main.black .sec5 .container .visual-box .slider.main .slider-content .sub-box div span.fourth::before {
-  background-color: grey;
+  background-color: #ffffff;
 }
 main.black .sec5 .container .visual-box .slider.main .slider-content.text .sub-box span {
   letter-spacing: 4px;
@@ -522,7 +553,7 @@ main.black .sec5 .slider.sub1 .text-box p {
   font-size: 18px;
   text-align: center;
   color: #858585;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 2;
 }
 main.black .sec6.pc {
@@ -546,16 +577,18 @@ main.black .sec6.pc .device-container figure .fake-img {
   position: relative;
   width: 401px;
   height: 779px;
-  background-image: url(../img/sec6/device.png);
+  background-image: url(../img/base/base_device1.png);
 }
 main.black .sec6.pc .device-container figure .fake-img::before {
-  content: "MAIN PAGE";
+  content: "Main";
   font-size: 28px;
   text-align: center;
   color: white;
   position: absolute;
   top: -58px;
-  left: 128px;
+  left: 166px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 main.black .sec6.pc .device-container figure .fake-img::after {
   content: "circle";
@@ -563,7 +596,7 @@ main.black .sec6.pc .device-container figure .fake-img::after {
   display: block;
   position: absolute;
   top: -80px;
-  left: 106px;
+  left: 142px;
   width: 66px;
   height: 66px;
   border: 1px solid white;
@@ -623,9 +656,11 @@ main.black .sec6.pc .mobile-box::before {
   position: relative;
   top: -58px;
   color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 main.black .sec6.pc .mobile-box.first::before {
-  content: "SUB PAGE 1";
+  content: "Brand Story 1";
   font-size: 28px;
   display: block;
   text-align: center;
@@ -634,7 +669,7 @@ main.black .sec6.pc .mobile-box.first::before {
   color: white;
 }
 main.black .sec6.pc .mobile-box.third::before {
-  content: "SUB PAGE 2";
+  content: "Brand Story 2";
   font-size: 28px;
   display: block;
   text-align: center;
@@ -648,7 +683,7 @@ main.black .sec6.pc .mobile-box::after {
   display: block;
   position: absolute;
   top: -80px;
-  left: 88px;
+  left: 68px;
   width: 66px;
   height: 66px;
   border: 1px solid white;
@@ -659,20 +694,20 @@ main.black .sec6.pc .mobile-box.first {
   position: relative;
   top: 30vh;
   height: 1100px;
-  background-image: url(../img/sec6/sub-page-1.png);
+  background-image: url(../img/img_work_view_neopharm_05.png);
 }
 main.black .sec6.pc .mobile-box.first .detail {
   top: calc(1100px + 60vh);
 }
 main.black .sec6.pc .mobile-box.second {
   height: 236vh;
-  background-image: url(../img/sec6/main-page.png);
+  background-image: url(../img/img_work_view_neopharm_04.png);
 }
 main.black .sec6.pc .mobile-box.third {
   position: relative;
   top: 140vh;
   height: 746px;
-  background-image: url(../img/sec6/sub-page-2.png);
+  background-image: url(../img/img_work_view_neopharm_06.png);
 }
 main.black .sec6.pc .mobile-box.third .detail {
   top: calc(-746px - 20vh);
@@ -722,28 +757,28 @@ main.black .sec6.mob .container .img-area::before {
   width: 100%;
   position: relative;
   top: -36px;
-  font-size: 18px;
-  font-family: "Neutral Face Regular";
+  font-size: 20px;
+  font-weight: 500;
 }
 main.black .sec6.mob .container .img-area.first {
-  background-image: url(../img/sec6/main-page.png);
+  background-image: url(../img/img_work_view_neopharm_04.png);
   height: 1500px;
 }
 main.black .sec6.mob .container .img-area.first::before {
-  content: "MAIN PAGE";
+  content: "Main";
 }
 main.black .sec6.mob .container .img-area.second {
-  background-image: url(../img/sec6/sub-page-1.png);
+  background-image: url(../img/img_work_view_neopharm_05.png);
 }
 main.black .sec6.mob .container .img-area.second::before {
-  content: "SUB PAGE 1";
+  content: "Brand Story 1";
 }
 main.black .sec6.mob .container .img-area.third {
-  background-image: url(../img/sec6/sub-page-2.png);
+  background-image: url(../img/img_work_view_neopharm_06.png);
   height: 700px;
 }
 main.black .sec6.mob .container .img-area.third::before {
-  content: "SUB PAGE 2";
+  content: "Brand Story 2";
 }
 main.black .sec7.pc {
   position: relative;
@@ -788,23 +823,23 @@ main.black .sec7.pc .container .items .item div::before {
   font-size: 0;
   position: absolute;
   width: 1417px;
-  left: -1px;
-  top: -1px;
+  left: -11px;
+  top: -9px;
   height: 797px;
-  background-image: url(../img/sec7/device.png);
+  background-image: url(../img/base/base_device2.png);
   background-size: cover;
 }
 main.black .sec7.pc .container .items .item:nth-child(1) div {
-  background-image: url(../img/sec7/page-1.png);
+  background-image: url(../img/img_work_view_neopharm_07.png);
 }
 main.black .sec7.pc .container .items .item:nth-child(2) div {
-  background-image: url(../img/sec7/page-3.png);
+  background-image: url(../img/img_work_view_neopharm_08.png);
 }
 main.black .sec7.pc .container .items .item:nth-child(3) div {
-  background-image: url(../img/sec7/page-2.png);
+  background-image: url(../img/img_work_view_neopharm_09.png);
 }
 main.black .sec7.pc .container .items .item:nth-child(4) div {
-  background-image: url(../img/sec7/page-4.png);
+  background-image: url(../img/img_work_view_neopharm_10.png);
 }
 main.black .sec7.pc .bg-box {
   width: 100%;
@@ -840,16 +875,16 @@ main.black .sec7.mob .container .img-area {
   transform: translateY(50px);
 }
 main.black .sec7.mob .container .img-area.first {
-  background-image: url(../img/sec7/page-1.png);
+  background-image: url(../img/img_work_view_neopharm_07.png);
 }
 main.black .sec7.mob .container .img-area.second {
-  background-image: url(../img/sec7/page-2.png);
+  background-image: url(../img/img_work_view_neopharm_08.png);
 }
 main.black .sec7.mob .container .img-area.third {
-  background-image: url(../img/sec7/page-3.png);
+  background-image: url(../img/img_work_view_neopharm_09.png);
 }
 main.black .sec7.mob .container .img-area.fourth {
-  background-image: url(../img/sec7/page-4.png);
+  background-image: url(../img/img_work_view_neopharm_10.png);
 }
 main.black .sec8 {
   height: 100vh;
@@ -887,7 +922,7 @@ main.black .sec8 .container .solution .be-box p {
   font-size: 22px;
   color: white;
   text-align: center;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 34px;
 }
 main.black .sec8 .container .solution .be-box::before {
@@ -898,7 +933,7 @@ main.black .sec8 .container .solution .be-box::before {
   display: block;
   position: absolute;
   z-index: -1;
-  background-image: url(../img/sec8/be-box.svg);
+  background-image: url(../img//base/base_be_box.svg);
 }
 main.black .sec8 .container .solution .af-box {
   position: relative;
@@ -925,7 +960,7 @@ main.black .sec8 .container .solution .af-box::before {
   display: block;
   position: absolute;
   z-index: -1;
-  background-image: url(../img/sec8/af-box.svg);
+  background-image: url(../img//base/base_af_box.svg);
 }
 main.black .sec8 .container .solution.second {
   margin-bottom: 100px;
@@ -934,10 +969,10 @@ main.black .sec8 .container .solution.second .category {
   background-color: #cccccc;
 }
 main.black .sec8 .container .solution.second .be-box::before {
-  background-image: url(../img/sec8/be-box-m.svg);
+  background-image: url(../img/base/base_be_box_m.svg);
 }
 main.black .sec8 .container .solution.second .af-box::before {
-  background-image: url(../img/sec8/af-box-m.svg);
+  background-image: url(../img/base/base_af_box_m.svg);
 }
 main.black .sec8.pc .solution.first {
   animation-name: fadeInUp;
@@ -1048,7 +1083,7 @@ main.white .sec1 .container .bg-box .line .wrap.first {
   position: absolute;
   width: 1383px;
   height: 1172px;
-  background: url(../img/sec1/line1-w.svg) no-repeat;
+  background: url(../img/base/base_line1_w.svg) no-repeat;
 }
 main.white .sec1 .container .bg-box .line .wrap.first .circle {
   position: absolute;
@@ -1065,7 +1100,7 @@ main.white .sec1 .container .bg-box .line .wrap.first .circle {
 }
 main.white .sec1 .container .bg-box .line .wrap.first.mob {
   display: none;
-  background: url(../img/sec1/line1-w-mob.svg) no-repeat;
+  background: url(../img/base/base_line1_w_mob.svg) no-repeat;
 }
 main.white .sec1 .container .bg-box .line .wrap.second {
   position: absolute;
@@ -1073,7 +1108,7 @@ main.white .sec1 .container .bg-box .line .wrap.second {
   top: -64px;
   width: 1246px;
   height: 1316px;
-  background: url(../img/sec1/line2-w.svg) no-repeat;
+  background: url(../img/base/base_line2_w.svg) no-repeat;
 }
 main.white .sec1 .container .bg-box .line .wrap.second .circle {
   position: absolute;
@@ -1090,7 +1125,7 @@ main.white .sec1 .container .bg-box .line .wrap.second .circle {
 }
 main.white .sec1 .container .bg-box .line .wrap.second.mob {
   display: none;
-  background: url(../img/sec1/line2-w-mob.svg) no-repeat;
+  background: url(../img/base/base_line2_w_mob.svg) no-repeat;
 }
 main.white .sec1 .container .black-box {
   background-color: black;
@@ -1117,7 +1152,7 @@ main.white .sec2 .container .text-box {
 }
 main.white .sec2 .container .text-box p {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   max-width: 356px;
   line-height: 2;
 }
@@ -1166,10 +1201,10 @@ main.white .sec4 .img-box div {
   background-position-x: center;
 }
 main.white .sec4 .img-box div.first {
-  background-image: url(../img/sec4/mockup1.jpg);
+  background-image: url(../img/img_work_view_neopharm_02.jpg);
 }
 main.white .sec4 .img-box div.second {
-  background-image: url(../img/sec4/mockup2.jpg);
+  background-image: url(../img/img_work_view_neopharm_03.jpg);
 }
 main.white .sec4 .reverse-box {
   opacity: 1;
@@ -1190,7 +1225,7 @@ main.white .sec5 .container {
 main.white .sec5 .container .visual-box {
   margin-left: 100px;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   height: 702px;
   width: 58%;
   background-color: black;
@@ -1235,11 +1270,11 @@ main.white .sec5 .container .visual-box .slider.main .slider-content .main-box i
   background-color: #e00719;
 }
 main.white .sec5 .container .visual-box .slider.main .slider-content .main-box i:nth-child(2) {
-  background-color: #fdb9e1;
+  background-color: #01abea;
   animation-delay: 0.1s;
 }
 main.white .sec5 .container .visual-box .slider.main .slider-content .main-box i:nth-child(3) {
-  background-color: grey;
+  background-color: #f7f8fa;
   animation-delay: 0.2s;
 }
 main.white .sec5 .container .visual-box .slider.main .slider-content .main-box span {
@@ -1299,13 +1334,13 @@ main.white .sec5 .container .visual-box .slider.main .slider-content .sub-box di
   background-color: #e00719;
 }
 main.white .sec5 .container .visual-box .slider.main .slider-content .sub-box div span.second::before {
-  background-color: #fdb9e1;
+  background-color: #01abea;
 }
 main.white .sec5 .container .visual-box .slider.main .slider-content .sub-box div span.third::before {
-  background-color: grey;
+  background-color: #f7f8fa;
 }
 main.white .sec5 .container .visual-box .slider.main .slider-content .sub-box div span.fourth::before {
-  background-color: grey;
+  background-color: #ffffff;
 }
 main.white .sec5 .container .visual-box .slider.main .slider-content.text .sub-box span {
   letter-spacing: 4px;
@@ -1339,14 +1374,14 @@ main.white .sec5 .slider.sub1 .text-box h3 {
   font-weight: normal;
   font-size: 40px;
   font-weight: 500;
-  color: black;
+  color: rgb(255, 255, 255);
   mix-blend-mode: difference;
 }
 main.white .sec5 .slider.sub1 .text-box p {
   font-size: 18px;
   text-align: center;
   color: #858585;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 2;
 }
 main.white .sec6.pc {
@@ -1370,17 +1405,19 @@ main.white .sec6.pc .device-container figure .fake-img {
   position: relative;
   width: 401px;
   height: 779px;
-  background-image: url(../img/sec6/device-w.png);
+  background-image: url(../img/base/base_device1_w.png);
 }
 main.white .sec6.pc .device-container figure .fake-img::before {
-  content: "MAIN PAGE";
+  content: "Main";
   font-size: 28px;
   font-weight: 500;
   text-align: center;
   color: black;
   position: absolute;
   top: -58px;
-  left: 128px;
+  left: 166px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 main.white .sec6.pc .device-container figure .fake-img::after {
   content: "circle";
@@ -1388,7 +1425,7 @@ main.white .sec6.pc .device-container figure .fake-img::after {
   display: block;
   position: absolute;
   top: -80px;
-  left: 106px;
+  left: 142px;
   width: 66px;
   height: 66px;
   border: 1px solid black;
@@ -1450,9 +1487,11 @@ main.white .sec6.pc .mobile-box::before {
   position: relative;
   top: -58px;
   color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 main.white .sec6.pc .mobile-box.first::before {
-  content: "SUB PAGE 1";
+  content: "Brand Story 1";
   font-size: 28px;
   display: block;
   text-align: center;
@@ -1460,7 +1499,7 @@ main.white .sec6.pc .mobile-box.first::before {
   top: -58px;
 }
 main.white .sec6.pc .mobile-box.third::before {
-  content: "SUB PAGE 2";
+  content: "Brand Story 2";
   font-size: 28px;
   display: block;
   text-align: center;
@@ -1473,7 +1512,7 @@ main.white .sec6.pc .mobile-box::after {
   display: block;
   position: absolute;
   top: -80px;
-  left: 88px;
+  left: 68px;
   width: 66px;
   height: 66px;
   border: 1px solid black;
@@ -1484,20 +1523,20 @@ main.white .sec6.pc .mobile-box.first {
   position: relative;
   top: 30vh;
   height: 1100px;
-  background-image: url(../img/sec6/sub-page-1.png);
+  background-image: url(../img/img_work_view_neopharm_05.png);
 }
 main.white .sec6.pc .mobile-box.first .detail {
   top: calc(1100px + 60vh);
 }
 main.white .sec6.pc .mobile-box.second {
   height: 236vh;
-  background-image: url(../img/sec6/main-page.png);
+  background-image: url(../img/img_work_view_neopharm_04.png);
 }
 main.white .sec6.pc .mobile-box.third {
   position: relative;
   top: 140vh;
   height: 746px;
-  background-image: url(../img/sec6/sub-page-2.png);
+  background-image: url(../img/img_work_view_neopharm_06.png);
 }
 main.white .sec6.pc .mobile-box.third .detail {
   top: calc(-746px - 20vh);
@@ -1550,31 +1589,31 @@ main.white .sec6.mob .container .img-area::before {
   width: 100%;
   position: relative;
   top: -36px;
-  font-size: 18px;
-  font-family: "Neutral Face Regular";
+  font-size: 20px;
+  font-weight: 500;
 }
 main.white .sec6.mob .container .img-area.first {
-  background-image: url(../img/sec6/main-page.png);
+  background-image: url(../img/img_work_view_neopharm_04.png);
   height: 1500px;
 }
 main.white .sec6.mob .container .img-area.first::before {
-  content: "MAIN PAGE";
+  content: "Main";
 }
 main.white .sec6.mob .container .img-area.second {
-  background-image: url(../img/sec6/sub-page-1.png);
+  background-image: url(../img/img_work_view_neopharm_05.png);
 }
 main.white .sec6.mob .container .img-area.second::before {
-  content: "SUB PAGE 1";
+  content: "Brand Story 1";
 }
 main.white .sec6.mob .container .img-area.third {
-  background-image: url(../img/sec6/sub-page-2.png);
+  background-image: url(../img/img_work_view_neopharm_06.png);
   height: 700px;
 }
 main.white .sec6.mob .container .img-area.third::before {
-  content: "SUB PAGE 2";
+  content: "Brand Story 2";
 }
 main.white .sec6.mob figure .fake-img {
-  background-image: url(../img/sec6/device-w.png);
+  background-image: url(../img/base/base_device1_w.png);
 }
 main.white .sec6.mob figure .fake-img::before {
   color: black;
@@ -1625,23 +1664,23 @@ main.white .sec7.pc .container .items .item div::before {
   font-size: 0;
   position: absolute;
   width: 1417px;
-  left: -1px;
-  top: -1px;
+  left: -11px;
+  top: -9px;
   height: 797px;
-  background-image: url(../img/sec7/device.png);
+  background-image: url(../img/base/base_device2.png);
   background-size: cover;
 }
 main.white .sec7.pc .container .items .item:nth-child(1) div {
-  background-image: url(../img/sec7/page-1.png);
+  background-image: url(../img/img_work_view_neopharm_07.png);
 }
 main.white .sec7.pc .container .items .item:nth-child(2) div {
-  background-image: url(../img/sec7/page-3.png);
+  background-image: url(../img/img_work_view_neopharm_08.png);
 }
 main.white .sec7.pc .container .items .item:nth-child(3) div {
-  background-image: url(../img/sec7/page-2.png);
+  background-image: url(../img/img_work_view_neopharm_09.png);
 }
 main.white .sec7.pc .container .items .item:nth-child(4) div {
-  background-image: url(../img/sec7/page-4.png);
+  background-image: url(../img/img_work_view_neopharm_10.png);
 }
 main.white .sec7.pc .bg-box {
   width: 100%;
@@ -1678,16 +1717,16 @@ main.white .sec7.mob .container .img-area {
   filter: drop-shadow(0px 40px 20px rgba(0, 0, 0, 0.2));
 }
 main.white .sec7.mob .container .img-area.first {
-  background-image: url(../img/sec7/page-1.png);
+  background-image: url(../img/img_work_view_neopharm_07.png);
 }
 main.white .sec7.mob .container .img-area.second {
-  background-image: url(../img/sec7/page-2.png);
+  background-image: url(../img/img_work_view_neopharm_08.png);
 }
 main.white .sec7.mob .container .img-area.third {
-  background-image: url(../img/sec7/page-3.png);
+  background-image: url(../img/img_work_view_neopharm_09.png);
 }
 main.white .sec7.mob .container .img-area.fourth {
-  background-image: url(../img/sec7/page-4.png);
+  background-image: url(../img/img_work_view_neopharm_10.png);
 }
 main.white .sec8 {
   height: 100vh;
@@ -1730,7 +1769,7 @@ main.white .sec8 .container .solution .be-box p {
   font-size: 22px;
   color: black;
   text-align: center;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 34px;
 }
 main.white .sec8 .container .solution .be-box::before {
@@ -1742,7 +1781,7 @@ main.white .sec8 .container .solution .be-box::before {
   position: absolute;
   z-index: -1;
   opacity: 0.3;
-  background-image: url(../img/sec8/be-box.svg);
+  background-image: url(../img/base/base_be_box.svg);
 }
 main.white .sec8 .container .solution .af-box {
   position: relative;
@@ -1769,7 +1808,7 @@ main.white .sec8 .container .solution .af-box::before {
   display: block;
   position: absolute;
   z-index: -1;
-  background-image: url(../img/sec8/af-box-w.svg);
+  background-image: url(../img/base/base_af_box_w.svg);
 }
 main.white .sec8 .container .solution.second {
   margin-bottom: 100px;
@@ -1778,10 +1817,10 @@ main.white .sec8 .container .solution.second .category {
   background-color: #686868;
 }
 main.white .sec8 .container .solution.second .be-box::before {
-  background-image: url(../img/sec8/be-box-m.svg);
+  background-image: url(../img/base/base_be_box_m.svg);
 }
 main.white .sec8 .container .solution.second .af-box::before {
-  background-image: url(../img/sec8/af-box-w-m.svg);
+  background-image: url(../img/base/base_af_box_w_m.svg);
 }
 main.white .sec8.pc .solution.first {
   animation-name: fadeInUp;
@@ -1804,7 +1843,6 @@ main.white .sec8.pc .sec9 {
   position: relative;
   width: 100%;
   height: 900px;
-  background-image: url(../img/sec9/mockup.png);
   background-size: cover;
 }
 main.white .sec8.pc .sec9 .container {
@@ -1861,14 +1899,43 @@ main.white .sec8.pc .sec9 .black-bg {
   aspect-ratio: 7/8 !important;
 }
 .sec4 .img-box.mob div.first {
-  background-image: url(../img/sec4/mockup1-mob.jpg);
+  background-image: url(../img/img_work_view_neopharm_02_mob.jpg);
 }
 .sec4 .img-box.mob div.second {
-  background-image: url(../img/sec4/mockup2-mob.jpg);
+  background-image: url(../img/img_work_view_neopharm_03_mob.jpg);
 }
 
 .sec5 {
   overflow: hidden;
+}
+.sec5 .main-box i:nth-child(3) {
+  border: 1px solid rgb(205, 205, 205);
+}
+.sec5 .sub-box span.third::before {
+  border: 1px solid rgb(205, 205, 205);
+}
+.sec5 .sub-box span.fourth::before {
+  border: 1px solid rgb(205, 205, 205);
+}
+.sec5 .slider.main .slider-content {
+  background-color: white;
+}
+.sec5 .slider.sub1 .text-box {
+  background-color: black;
+}
+.sec5 .slider.sub1 .text-box p {
+  word-break: keep-all;
+}
+
+.white .sec5 .slider.main .slider-content {
+  background-color: black;
+}
+.white .sec5 .slider.sub1 .text-box {
+  background-color: white;
+}
+
+.sec6 .detail {
+  display: none;
 }
 
 .sec6.mob {
@@ -1892,20 +1959,20 @@ main.white .sec8.pc .sec9 .black-bg {
   position: relative;
   width: 318px;
   height: 618px;
-  background-image: url(../img/sec6/device.png);
+  background-image: url(../img/base/base_device1.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
 .sec6.mob figure .fake-img::before {
-  content: "MAIN PAGE";
+  content: "Main";
   color: white;
   display: block;
   text-align: center;
   width: 100%;
   position: relative;
   top: -36px;
-  font-size: 18px;
-  font-family: "Neutral Face Regular";
+  font-size: 20px;
+  font-weight: 500;
 }
 .sec6.mob figure::before {
   content: "curtain";
@@ -1928,18 +1995,27 @@ main.white .sec8.pc .sec9 .black-bg {
   width: 100% !important;
   aspect-ratio: 16/8.9 !important;
   height: auto !important;
+  border-radius: 20px !important;
 }
 .sec7 .items .item div::before {
-  width: 70vw !important;
+  width: calc(70vw + 19px) !important;
   height: auto !important;
   aspect-ratio: 16/9 !important;
+}
+
+.sec8 .solution .be-box p {
+  font-size: 20px !important;
+}
+.sec8 .solution .af-box p {
+  font-size: 28px !important;
+  font-weight: 600 !important;
 }
 
 .sec9 {
   position: relative;
   width: 100%;
   height: 900px;
-  background-image: url(../img/sec9/mockup.png);
+  background-image: url(../img/img_work_view_neopharm_11.png);
   background-size: cover;
 }
 .sec9 .container {
@@ -1993,7 +2069,7 @@ main.white .sec8.pc .sec9 .black-bg {
   display: block;
   width: 40px;
   height: 20px;
-  background-image: url(../img/footer/arrow-l.svg);
+  background-image: url(../img/base/base_arrow_l.svg);
   margin-right: 30px;
 }
 .sec10 .container a.right::after {
@@ -2002,7 +2078,7 @@ main.white .sec8.pc .sec9 .black-bg {
   display: block;
   width: 40px;
   height: 20px;
-  background-image: url(../img/footer/arrow-r.svg);
+  background-image: url(../img/base/base_arrow_r.svg);
   margin-left: 30px;
 }
 .sec10 .container a.middle {
@@ -2010,7 +2086,7 @@ main.white .sec8.pc .sec9 .black-bg {
   width: 80px;
   height: 80px;
   background-size: cover;
-  background-image: url(../img/footer/menu-btn.png);
+  background-image: url(../img/base/base_menu.png);
   transition: 0.3s;
 }
 .sec10 .container a.middle:hover {
@@ -2051,6 +2127,9 @@ main.white .sec8.pc .sec9 .black-bg {
   .sec6.pc .mobile-box {
     width: 280px !important;
   }
+  .sec6.pc .mobile-box::after {
+    left: 30px !important;
+  }
   .sec6.pc .device-container figure::before {
     width: 300px !important;
   }
@@ -2059,11 +2138,12 @@ main.white .sec8.pc .sec9 .black-bg {
     height: 588px !important;
     background-size: contain;
     background-repeat: no-repeat;
-  }
-  .sec6.pc .device-container figure .fake-img {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .sec6.pc .device-container figure .fake-img::after {
+    left: 96px !important;
   }
   .sec6.pc .device-container figure .fake-img::before {
     left: auto !important;
@@ -2100,6 +2180,16 @@ main.white .sec8.pc .sec9 .black-bg {
   }
 }
 @media (max-width: 1024px) {
+  .swiper-pagination {
+    top: 16px !important;
+  }
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+    background-color: transparent !important;
+    margin: 0 !important;
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
   .category {
     font-size: 14px !important;
     padding: 6px 14px !important;
@@ -2196,7 +2286,9 @@ main.white .sec8.pc .sec9 .black-bg {
     display: none !important;
   }
   .sec5 .slider.sub1 {
+    width: 100% !important;
     position: relative !important;
+    max-width: 400px;
   }
   .sec5 .slider.sub1 .text-box h3 {
     font-size: 28px !important;
@@ -2227,7 +2319,7 @@ main.white .sec8.pc .sec9 .black-bg {
   .sec8 .container .solution .be-box::before {
     height: 190px !important;
     width: 282px !important;
-    background-image: url(../img/sec8/be-box-mob.svg) !important;
+    background-image: url(../img/base/base_be_box_mob.svg) !important;
     opacity: 0.3;
   }
   .sec8 .container .solution .be-box {
@@ -2238,7 +2330,7 @@ main.white .sec8.pc .sec9 .black-bg {
   .sec8 .container .solution .af-box::before {
     height: 190px !important;
     width: 282px !important;
-    background-image: url(../img/sec8/af-box-mob.svg) !important;
+    background-image: url(../img/base/base_af_box_mob.svg) !important;
   }
   .sec8 .container .solution .af-box {
     height: 190px !important;
@@ -2250,7 +2342,7 @@ main.white .sec8.pc .sec9 .black-bg {
     line-height: 28px !important;
   }
   .sec8 .container .solution .af-box p {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
   .sec8 .container .solution img {
     margin: 20px 0;
@@ -2260,10 +2352,10 @@ main.white .sec8.pc .sec9 .black-bg {
     margin-bottom: 0 !important;
   }
   .sec8 .container .solution.second .be-box::before {
-    background-image: url(../img/sec8/be-box-m-mob.svg) !important;
+    background-image: url(../img/base/base_be_box_m_mob.svg) !important;
   }
   .sec8 .container .solution.second .af-box::before {
-    background-image: url(../img/sec8/af-box-m-mob.svg) !important;
+    background-image: url(../img/base/base_af_box_m_mob.svg) !important;
   }
   .sec8 .container .solution {
     transform: rotateY(90deg);
@@ -2332,16 +2424,16 @@ main.white .sec8.pc .sec9 .black-bg {
     background-size: cover;
   }
   main.white .sec8 .container .solution .be-box::before {
-    background-image: url(../img/sec8/be-box-w-mob.svg) !important;
+    background-image: url(../img/base/base_be_box_w_mob.svg) !important;
   }
   main.white .sec8 .container .solution .af-box::before {
-    background-image: url(../img/sec8/af-box-w-mob.svg) !important;
+    background-image: url(../img/base/base_af_box_w_mob.svg) !important;
   }
   main.white .sec8 .container .solution.second .be-box::before {
-    background-image: url(../img/sec8/be-box-w-m-mob.svg) !important;
+    background-image: url(../img/base/base_be_box_w_m_mob.svg) !important;
   }
   main.white .sec8 .container .solution.second .af-box::before {
-    background-image: url(../img/sec8/af-box-w-m-mob.svg) !important;
+    background-image: url(../img/base/base_af_box_w_m_mob.svg) !important;
   }
 }
 @media (max-width: 800px) {
@@ -2420,6 +2512,9 @@ main.white .sec8.pc .sec9 .black-bg {
   }
   .sec4 .img-box.mob {
     display: block !important;
+  }
+  main.white .sec5 .slider.sub1 {
+    max-width: none;
   }
   .sec10 .container a:not(a.middle) strong {
     display: none;
